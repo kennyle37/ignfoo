@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './sass/index.scss';
 
 import TopHeaderContainer from './top-header/TopHeaderContainer';
-import SideNavContainer from './side-nav/SideNavCardContainer';
+import SideNavDisplayContainer from './side-nav/SideNavDisplayContainer';
 import SideSectionContainer from './side-section/SideSectionContainer';
 
 class App extends Component {
@@ -20,8 +20,14 @@ class App extends Component {
 
         {/* NEED TO REFACTOR FOR MOBILE/TABLET DISPLAY */}
         <div className="row">  
-          <div className="box col-md-3 col-xs-12">SIDE NAV</div>
-          <div className="box col-md-6 col-xs-12">SIDE SECTION</div>
+          <div className="box col-md-3 col-xs-12">
+            <SideNavDisplayContainer />
+          </div>
+
+          <div className="box col-md-6 col-xs-12">
+            <SideSectionContainer />
+          </div>
+          
           <div className="box col-md-3 hide-sm-only hide-xs-only">DEAD SPACE</div>
         </div>
       </div>

@@ -1,0 +1,44 @@
+@import "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/main.css";
+
+// _   _  _____  _   _ 
+// ( ) ( )(  _  )( ) ( )
+// | `\| || (_) || | | |
+// | , ` ||  _  || | | |
+// | |`\ || | | || \_/ |
+// (_) (_)(_) (_)`\___/'
+// PUFFY               
+
+.SideNavContainer {
+  border: .5px solid chartreuse;
+}
+
+.SideNavCard {
+
+}
+
+.NavCard {
+  border: .5px solid orange;
+  margin: 10px 10px;
+  height: 50px;
+  &--card {
+    border: .5px solid black;
+  }
+}
+
+// ___    ___    ___   _____  _  _____  _   _ 
+// (  _`\ (  _`\ (  _`\(_   _)(_)(  _  )( ) ( )
+// | (_(_)| (_(_)| ( (_) | |  | || ( ) || `\| |
+// `\__ \ |  _)_ | |  _  | |  | || | | || , ` |
+// ( )_) || (_( )| (_( ) | |  | || (_) || |`\ |
+// `\____)(____/'(____/' (_)  (_)(_____)(_) (_)
+// PUFFY
+
+.SideSection {
+
+}
+
+.SideSectionCard {
+  height: 192px;
+  max-height: 192px;
+  border: .5px solid chartreuse;
+}
