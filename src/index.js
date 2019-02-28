@@ -12,13 +12,11 @@ class App extends Component {
     return (
       <div className="container">
         <div className="row">
-          {/* NEED TO REFACTOR FOR MOBILE/TABLET DISPLAY */}
           <div className="col-md-12 col-xs-12 TopHeader--container">
             <TopHeaderContainer title="Latest News" />
           </div>
         </div>
 
-        {/* NEED TO REFACTOR FOR MOBILE/TABLET DISPLAY */}
         <div className="row">  
           <div className="col-md-3 col-xs-12 SideNav--container">
             <SideNavDisplayContainer />
