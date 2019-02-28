@@ -1,0 +1,22 @@
+@import "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/main.css";
+$fontColor: #252627;
+
+body {
+  margin: 0;
+  font-size: 16px;
+  color: $fontColor;
+  font-family: 'ars-maquette-web', sans-serif;
+}
+
+.container {
+  max-width: 1440 * 1px;
+  margin: 0px auto;
+}
+
+// .row {
+//   border: 1px solid #4CAF50;
+// }
+
+.box {
+  border: 1px solid red;
+}
