@@ -22,6 +22,7 @@
   }
   &--card {
     // border: .5px solid red;
+    cursor: pointer;
   }
   &--card-logo {
     height: 100%;
@@ -69,6 +70,7 @@ li {
   }
   &--card-preview {
     padding-left: 0px;
+    cursor: pointer;
     // margin: auto 0px auto 0px;
   }
   &--card-info {
@@ -86,6 +88,7 @@ li {
   }
   &--post-comment {
     margin: 0px 5px 0 0;
+    cursor: pointer;
   }
   &--post-comment-count {
 
@@ -94,6 +97,7 @@ li {
     color: black;
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
   }
   &--img {
     width: 100%;
