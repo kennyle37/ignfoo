@@ -3,7 +3,7 @@ import NavCard from './NavCard';
 
 const SideNavCardContainer = () => {
   return (
-    <div className="SideNavCard">
+    <div className="SideNav--card-container">
       <NavCard />
       <NavCard />
       <NavCard />

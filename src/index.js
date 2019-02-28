@@ -13,22 +13,22 @@ class App extends Component {
       <div className="container">
         <div className="row">
           {/* NEED TO REFACTOR FOR MOBILE/TABLET DISPLAY */}
-          <div className="col-md-12 col-xs-12">
+          <div className="col-md-12 col-xs-12 TopHeader--container">
             <TopHeaderContainer title="Latest News" />
           </div>
         </div>
 
         {/* NEED TO REFACTOR FOR MOBILE/TABLET DISPLAY */}
         <div className="row">  
-          <div className="box col-md-3 col-xs-12">
+          <div className="col-md-3 col-xs-12 SideNav--container">
             <SideNavDisplayContainer />
           </div>
 
-          <div className="box col-md-6 col-xs-12">
+          <div className="col-md-6 col-xs-12 SideSection--container">
             <SideSectionContainer />
           </div>
           
-          <div className="box col-md-3 hide-sm-only hide-xs-only">DEAD SPACE</div>
+          <div className="col-md-3 hide-sm-only hide-xs-only" />
         </div>
       </div>
     )

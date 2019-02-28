@@ -3,7 +3,7 @@ import SectionCardContainer from './SectionCardContainer';
 
 const SideSectionContainer = () => {
   return (
-    <div className="SideSection">
+    <div className="SideSection--row">
       <SectionCardContainer />
       <SectionCardContainer />
       <SectionCardContainer />

@@ -6,22 +6,30 @@
 // | , ` ||  _  || | | |
 // | |`\ || | | || \_/ |
 // (_) (_)(_) (_)`\___/'
-// PUFFY               
+// PUFFY     
 
-.SideNavContainer {
-  border: .5px solid chartreuse;
-}
-
-.SideNavCard {
-
-}
-
-.NavCard {
-  border: .5px solid orange;
-  margin: 10px 10px;
-  height: 50px;
+.SideNav {
+  &--container {
+    // border: .5px solid lightblue;
+    margin: 0px auto;
+    padding-left: 0px;
+  }
+  &--row {
+    // border: .5px solid lightgreen;
+  }
+  &--card-container {
+    // border-bottom: .5px solid yellow;
+  }
   &--card {
-    border: .5px solid black;
+    // border-bottom: .5px solid red;
+    margin: 0px auto;
+    height: 50px;
+  }
+  &--card-logo {
+
+  }
+  &--card-description {
+
   }
 }
 
@@ -35,10 +43,54 @@
 
 .SideSection {
 
-}
+  &--container {
+    // border: .5px solid lightblue;
+    padding: 0px;
+  }
+  &--row {
+    margin: 0px !important;
+    // border: .5px solid lightgreen;
+  }
+  &--card-container {
+    // border: .5px solid yellow;
+  }
+  &--card-preview {
+    padding-left: 0px;
+    // margin: auto 0px auto 0px;
+  }
+  &--card-info {
+    // border: .5px solid red;
+    padding-left: 0px;
+  }
+  &--post-header {
+    font-size: 14px;
+    color: #bf1313;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+  }
+  &--post-time {
+    margin: 0px 5px 0 0;
+  }
+  &--post-comment {
+    margin: 0px 5px 0 0;
+  }
+  &--post-comment-count {
 
-.SideSectionCard {
-  height: 192px;
-  max-height: 192px;
-  border: .5px solid chartreuse;
+  }
+  &--post-title {
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  &--img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 150px;
+    border-radius: 2.5px;
+  }
+  &--msg-logo {
+    width: 15px;
+    height: 15px;
+  }
 }

@@ -1,8 +1,10 @@
 import React from 'react';
 
+import '../sass/top-header.scss';
+
 const TopHeaderContainer = (props) => {
   return (
-    <div>{props.title}</div>
+    <div className="TopHeader--title">{props.title}</div>
   )
 }
 

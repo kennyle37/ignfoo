@@ -5,7 +5,7 @@ import SideNavCardContainer from './SideNavCardContainer';
 
 const SideNavDisplayContainer = () => {
   return (
-    <div className="SideNavContainer">
+    <div className="SideNav--row">
       <SideNavCardContainer />
     </div>
   )
