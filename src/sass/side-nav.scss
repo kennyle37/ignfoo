@@ -22,6 +22,7 @@
   }
   &--card {
     // border: .5px solid red;
+    color: gray;
     cursor: pointer;
   }
   &--card-logo {
@@ -32,20 +33,18 @@
   }
   &--card-description {
     font-size: 18px;
-    // color: gray;
+    padding: 0px;
   }
+}
+.active {
+  background-color: #bf1313;
+  color: #fff;
+  font-weight: 800;
+  border-radius: 3px;
 }
 
 li {
   list-style-type: none;
-}
-
-.active {
-  background-color: #bf1313;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 800;
-  border-radius: 3px;
 }
 
 // ___    ___    ___   _____  _  _____  _   _ 

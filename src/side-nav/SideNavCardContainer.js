@@ -11,7 +11,6 @@ class SideNavCardContainer extends Component {
   }
 
   render() {
-    const { selected } = this.state;
     return (
       <div className="row SideNav--card-container">
           <li className="col-md-12 SideNav--card active" onClick={this.onNavSelection}>
