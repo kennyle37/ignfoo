@@ -1,5 +1,5 @@
 import React from 'react';
-import '../sass/side-nav.scss';
+import '../sass/index.scss';
 
 import SideNavCardContainer from './SideNavCardContainer';
 

@@ -4,11 +4,213 @@ $fontColor: #252627;
 body {
   margin: 0;
   font-size: 16px;
-  color: $fontColor;
   font-family: 'ars-maquette-web', sans-serif;
+  // padding: 0px;
+  color: $fontColor;
 }
 
 .container {
   max-width: 1200px;
   margin: 0px auto;
+}
+// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+
+// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+@media screen and (max-width: 768px) {
+  .container {
+    margin: auto 10px;
+  }
+} 
+
+//  _                         _                        _              
+// ( )_                      ( )                      ( )             
+// | ,_)   _    _ _   ______ | |__     __     _ _    _| |   __   _ __ 
+// | |   /'_`\ ( '_`\(______)|  _ `\ /'__`\ /'_` ) /'_` | /'__`\( '__)
+// | |_ ( (_) )| (_) )       | | | |(  ___/( (_| |( (_| |(  ___/| |   
+// `\__)`\___/'| ,__/'       (_) (_)`\____)`\__,_)`\__,_)`\____)(_)   
+//             | |                                                    
+//             (_)                                                    
+
+.TopHeader {
+  &--container {
+    padding-right: 0px;
+    border-bottom: .5px solid lightgray;
+    // margin: 0px 16px 0px 0px;
+  }
+  &--title {
+    font-size: 36px;
+    font-weight: 900;
+  }
+}
+
+// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+@media screen and (min-width: 769px) {
+  .TopHeader--container {
+    padding-left: 0px;
+  }
+}
+
+// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+@media screen and (max-width: 768px) {
+  .TopHeader {
+    &--container {
+      padding-left: 0px;
+      padding-right: 0px;
+      border-bottom: .5px solid lightgray;
+    }
+    &--title {
+      font-size: 26px;
+    }
+    &--title-mobile {
+      display: none;
+      padding: auto;
+    }
+  }
+} 
+
+// _   _  _____  _   _ 
+// ( ) ( )(  _  )( ) ( )
+// | `\| || (_) || | | |
+// | , ` ||  _  || | | |
+// | |`\ || | | || \_/ |
+// (_) (_)(_) (_)`\___/'
+// PUFFY     
+
+.SideNav {
+  &--container {
+    // border: .5px solid lightblue;
+    margin: 0px auto;
+    padding-left: 0px;
+  }
+  &--row {
+    // border: .5px solid lightgreen;
+  }
+  &--card-container {
+    // border-bottom: .5px solid red;
+  }
+  &--card {
+    // border: .5px solid red;
+    color: gray;
+    cursor: pointer;
+  }
+  &--card-logo {
+    height: 100%;
+    width: 100%;
+    max-height: 50px;
+    max-width: 50px;
+  }
+  &--card-description {
+    font-size: 18px;
+    padding: 0px;
+  }
+}
+.active {
+  background-color: #bf1313;
+  color: #fff;
+  font-weight: 800;
+  border-radius: 3px;
+}
+
+li {
+  list-style-type: none;
+}
+
+// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+
+// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+@media screen and (max-width: 768px) {
+  .SideNav--container {
+    display: none;
+  }
+}
+
+// ___    ___    ___   _____  _  _____  _   _ 
+// (  _`\ (  _`\ (  _`\(_   _)(_)(  _  )( ) ( )
+// | (_(_)| (_(_)| ( (_) | |  | || ( ) || `\| |
+// `\__ \ |  _)_ | |  _  | |  | || | | || , ` |
+// ( )_) || (_( )| (_( ) | |  | || (_) || |`\ |
+// `\____)(____/'(____/' (_)  (_)(_____)(_) (_)
+// PUFFY
+
+.SideSection {
+  &--container {
+    // border: .5px solid lightblue;
+    padding: 0px;
+  }
+  &--row {
+    margin: 0px !important;
+    // border: .5px solid lightgreen;
+  }
+  &--card-container {
+    // border: .5px solid yellow;
+  }
+  &--card-preview {
+    padding-left: 0px;
+    cursor: pointer;
+    // margin: auto 0px auto 0px;
+  }
+  &--card-info {
+    // border: .5px solid red;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  &--post-header {
+    font-size: 14px;
+    color: #bf1313;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+  }
+  &--post-time {
+    margin: 0px 5px 0 0;
+  }
+  &--post-comment {
+    margin: 0px 5px 0 0;
+    cursor: pointer;
+  }
+  &--post-comment-count {
+
+  }
+  &--post-title {
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  &--img {
+    width: 100%;
+    height: 100%;
+    max-width: 285px;
+    max-height: 172px;
+    border-radius: 3px;
+  }
+  &--msg-logo {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+
+// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+@media screen and (max-width: 768px) {
+  .SideSection {
+    &--img {
+      // margin: auto auto auto 10px;
+      width: 100%;
+      height: 100%;
+      max-width: 160px;
+      max-height: 90px;
+      border-radius: 3px;
+    }
+    &--post-title {
+      color: black;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    &--card-container {
+      // margin: auto 10px auto 10px;
+      border-bottom: .5px solid lightgray;
+    }
+  }
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import '../sass/index.scss';
+
 import SectionCardContainer from './SectionCardContainer';
 
 const SideSectionContainer = () => {

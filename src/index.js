@@ -13,7 +13,9 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12 col-xs-12 TopHeader--container">
-            <TopHeaderContainer title="Latest News" />
+            <div className="TopHeader--title">
+              <span className="TopHeader--title-mobile">Latest</span> News
+            </div>
           </div>
         </div>
 
