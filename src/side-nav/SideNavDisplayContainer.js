@@ -3,10 +3,10 @@ import '../sass/index.scss';
 
 import SideNavCardContainer from './SideNavCardContainer';
 
-const SideNavDisplayContainer = () => {
+const SideNavDisplayContainer = ({ handleCurrentView }) => {
   return (
     <div className="SideNav--row">
-      <SideNavCardContainer />
+      <SideNavCardContainer handleCurrentView={handleCurrentView}/>
     </div>
   )
 }

@@ -8,6 +8,21 @@ import SideNavDisplayContainer from './side-nav/SideNavDisplayContainer';
 import SideSectionContainer from './side-section/SideSectionContainer';
 
 class App extends Component {
+  state = {
+    view: 'Latest',
+  }
+
+  //get the view of our current 
+  handleCurrentView = (e) => {
+    document.querySelector('.active').classList.remove('active');
+    e.currentTarget.classList.add('active');
+    const selection = e.currentTarget.querySelector('.SideNav--card-description').textContent;
+    this.setState({
+      view: selection  
+    }, ()=> console.log(this.state))
+
+  }
+
   render() {
     return (
       <div className="container">
@@ -19,7 +34,7 @@ class App extends Component {
 
         <div className="row">  
           <div className="col-md-3 col-xs-12 SideNav--container">
-            <SideNavDisplayContainer />
+            <SideNavDisplayContainer handleCurrentView={this.handleCurrentView} />
           </div>
 
           <div className="col-md-6 col-xs-12 SideSection--container">
