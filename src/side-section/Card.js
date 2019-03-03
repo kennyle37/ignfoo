@@ -1,7 +1,7 @@
 import React from 'react';
 import msgLogo from '../assets/stock/msg.png'
 
-const Card = () => {
+const Card = ({ title }) => {
   return (
     <div className="col-md-6 col-xs-6 SideSection--card-info">
       <div className="SideSection--post-header">
@@ -16,7 +16,7 @@ const Card = () => {
         </span>
       </div>
       <div className="SideSection--post-title">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      {title}
       </div>
     </div>
   )

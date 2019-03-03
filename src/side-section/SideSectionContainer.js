@@ -53,20 +53,34 @@ class SideSectionContainer extends Component {
   }
 
   //map function that spread out our view after we get it
-  /*
-  take in a view
+  handleDataMap = (list) =>
+    list.map(item => {
+      const url = item.thumbnails[0].url;
+      const title = item.metadata.headline ? item.metadata.headline : item.metadata.title;
+      return <SectionCardContainer 
+        preview={url} 
+        title={title}
+      />
+    })
 
-  check what the current view is and map depending on that view
-  */
-  handleDataMap = () => {
-
-  }
 
   render() {
+    let storage;
+    const { articles, videos } = this.state;
+    const { view } = this.props;
+
+    if (view === 'articles') {
+      storage = articles;
+    } else if (view === 'videos') {
+      storage = videos;
+    } else {
+      //need to fix for recent
+      storage = [];
+    }
+
     return (
       <div className="SideSection--row">
-        <SectionCardContainer />
-        <SectionCardContainer />
+        {this.handleDataMap(storage)}
       </div>
     )
   }

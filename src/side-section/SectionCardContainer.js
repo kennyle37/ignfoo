@@ -2,11 +2,11 @@ import React from 'react';
 import Card from './Card';
 import Preview from './Preview';
 
-const SideSectionCardContainer = () => {
+const SideSectionCardContainer = ({ preview, title }) => {
   return (
     <div className="row SideSection--card-container">
-      <Preview />
-      <Card />
+      <Preview preview={preview} />
+      <Card title={title} />
     </div>
   )
 }
