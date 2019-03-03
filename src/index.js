@@ -12,18 +12,19 @@ class App extends Component {
     view: 'Latest',
   }
 
-  //get the view of our current 
+  //get the view of our current page and store it in state
   handleCurrentView = (e) => {
     document.querySelector('.active').classList.remove('active');
     e.currentTarget.classList.add('active');
     const selection = e.currentTarget.querySelector('.SideNav--card-description').textContent;
     this.setState({
       view: selection  
-    }, ()=> console.log(this.state))
-
+    })
   }
 
   render() {
+    const view = this.state.view.toLowerCase();
+
     return (
       <div className="container">
         <div className="row">
@@ -38,7 +39,7 @@ class App extends Component {
           </div>
 
           <div className="col-md-6 col-xs-12 SideSection--container">
-            <SideSectionContainer />
+            <SideSectionContainer view={view} />
           </div>
           
           <div className="col-md-3 hide-sm-only hide-xs-only" />
