@@ -75,7 +75,7 @@ class SideSectionContainer extends Component {
       storage = videos;
     } else {
       //need to fix for recent
-      storage = [];
+      storage = articles;
     }
 
     return (
