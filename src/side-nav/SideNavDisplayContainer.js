@@ -1,12 +1,12 @@
 import React from 'react';
-import '../sass/side-nav.scss';
+import '../sass/index.scss';
 
 import SideNavCardContainer from './SideNavCardContainer';
 
-const SideNavDisplayContainer = () => {
+const SideNavDisplayContainer = ({ handleCurrentView }) => {
   return (
-    <div className="SideNavContainer">
-      <SideNavCardContainer />
+    <div className="SideNav--row">
+      <SideNavCardContainer handleCurrentView={handleCurrentView}/>
     </div>
   )
 }

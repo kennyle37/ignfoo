@@ -2,7 +2,10 @@ import React from 'react';
 
 const TopHeaderContainer = (props) => {
   return (
-    <div>{props.title}</div>
+    <div className="TopHeader--title">
+      <span className="TopHeader--title-mobile">{props.mobileTitle}</span> {props.pcTitle}
+    </div>
+              
   )
 }
 

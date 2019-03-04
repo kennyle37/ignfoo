@@ -1,11 +1,11 @@
 import React from 'react';
 
-const stock = 'https://bnetproduct-a.akamaihd.net//70/dfdccc3712ed263d4903fa18806adab7-sc2-carbot-feature-003.jpg';
+import stock from '../assets/stock/carbot.jpg';
 
-const Preview = () => {
+const Preview = ({ preview }) => {
   return (
-    <div>
-      <img src={stock} alt="example" width="325" height="165" />
+    <div className="col-md-6 col-xs-6 SideSection--card-preview">
+      <img className="SideSection--img" src={preview} alt="example" />
     </div>
   )
 }
