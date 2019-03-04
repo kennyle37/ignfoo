@@ -1,13 +1,55 @@
 import React from 'react';
 
+function timeConverter(duration) {
+  let time = '';
+  let hours = Math.floor(duration / 3600);
+  duration = duration - hours * 3600;
+
+  let mins = Math.floor(duration / 60);
+  let secs = duration - mins * 60;
+
+  if (hours > 0) {
+    time += hours + ':';
+
+    if (mins < 10) {
+      time += '0' + mins + ':';
+
+      if (secs < 10) {
+        time += '0' + secs;
+      } else {
+        time += secs;
+      }
+    } else {
+      time += mins + ':';
+    }
+
+  } else if (hours === 0) {
+    time += mins + ':';
+
+      if (secs < 10) {
+        time += '0' + secs;
+      } else {
+        time += secs;
+      }
+  }
+  return time;
+}
+
 const Preview = ({ preview, duration }) => {
+  const visible = duration ? 'SideSection--card-duration-container' : 'SideSection--card-duration-container hidden';
+  let time;
+
+  if (duration) {
+    time = timeConverter(duration);
+  }
+
   return (
     <div className="col-md-6 col-xs-6 SideSection--card-preview">
-      <span className="SideSection--card-duration-container">
+      <span className={visible}>
         <span className="SideSection--card-icon circle">
           <i className="fas fa-play fa-sm" />
         </span>
-        <span className="SideSection--card-duration">3:32</span>
+        <span className="SideSection--card-duration">{time}</span>
       </span>
       <img className="SideSection--img" src={preview} alt="example" />
     </div>
