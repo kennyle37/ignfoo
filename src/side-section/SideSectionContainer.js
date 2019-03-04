@@ -45,7 +45,7 @@ class SideSectionContainer extends Component {
         temp.push(current);
         this.setState({
           videos: temp
-        })
+        }, () => console.log('this is videos state', this.state.videos))
       }
       return current;
     })
@@ -57,9 +57,13 @@ class SideSectionContainer extends Component {
     list.map(item => {
       const url = item.thumbnails[0].url;
       const title = item.metadata.headline ? item.metadata.headline : item.metadata.title;
-      return <SectionCardContainer 
+      const contentId = item.contentId;
+      const duration = item.metadata.duration;
+      return <SectionCardContainer
+        key={contentId}
         preview={url} 
         title={title}
+        duration={duration}
       />
     })
 

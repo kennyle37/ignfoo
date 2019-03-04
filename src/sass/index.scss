@@ -1,11 +1,20 @@
 @import "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/main.css";
+/*
+FONT STYLES
+*/
+$fontStyle: 'ars-maquette-web', sans-serif;
 $fontColor: #252627;
+$whiteFontColor: #fff;
+$lightBold: 300;
+$mediumBold: 600;
+$heavyBold: 900;
+$redBackground: #bf1313;
+$borderRadius: 3px;
 
 body {
   margin: 0;
   font-size: 16px;
-  font-family: 'ars-maquette-web', sans-serif;
-  // padding: 0px;
+  font-family: $fontStyle;
   color: $fontColor;
 }
 
@@ -39,7 +48,7 @@ body {
   }
   &--title {
     font-size: 36px;
-    font-weight: 900;
+    font-weight: $heavyBold;
   }
 }
 
@@ -105,10 +114,10 @@ body {
   }
 }
 .active {
-  background-color: #bf1313;
-  color: #fff;
-  font-weight: 800;
-  border-radius: 3px;
+  background-color: $redBackground;
+  color: $whiteFontColor;
+  font-weight: $heavyBold;
+  border-radius: $borderRadius;
 }
 
 li {
@@ -150,6 +159,27 @@ li {
     cursor: pointer;
     // margin: auto 0px auto 0px;
   }
+  &--card-duration-container {
+    background-color: $redBackground;
+    display: inline-block;
+    width: 100%;
+    max-width: 85px;
+    border-radius: $borderRadius;
+    color: $whiteFontColor;
+    font-weight: $mediumBold;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  &--card-icon {
+    color: $redBackground;
+  }
+  &--card-duration {
+    font-size: 16px;
+    font-weight: $mediumBold;
+    letter-spacing: .05em;
+  }
+
   &--card-info {
     // border: .5px solid red;
     padding-left: 0px;
@@ -157,8 +187,8 @@ li {
   }
   &--post-header {
     font-size: 14px;
-    color: #bf1313;
-    font-weight: 600;
+    color: $redBackground;
+    font-weight: $mediumBold;
     margin: 0 0 10px 0;
   }
   &--post-time {
@@ -174,7 +204,7 @@ li {
   &--post-title {
     color: black;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: $mediumBold;
     cursor: pointer;
   }
   &--img {
@@ -182,12 +212,27 @@ li {
     height: 100%;
     max-width: 285px;
     max-height: 172px;
-    border-radius: 3px;
+    border-radius: $borderRadius;
   }
   &--msg-logo {
     width: 15px;
     height: 15px;
   }
+}
+
+.circle {
+  background-color: $whiteFontColor;
+  display: inline-block;
+  width: 20px;
+  margin-right: 7px;
+  border-radius: 50%;
+  padding-left: 2px;
+}
+
+.fa-play {
+  font-size: .60rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 // FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
@@ -206,7 +251,7 @@ li {
     &--post-title {
       color: black;
       font-size: 15px;
-      font-weight: 500;
+      font-weight: $lightBold;
       cursor: pointer;
     }
     &--card-container {
