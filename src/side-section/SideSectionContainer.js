@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import jsonp from 'jsonp';
+import moment from 'moment';
 import SectionCardContainer from './SectionCardContainer';
 
 class SideSectionContainer extends Component {
   state = {
     data: [],
+    latest: [],
     articles: [],
     videos: [],
   }
@@ -44,11 +46,15 @@ class SideSectionContainer extends Component {
         temp.push(current);
         this.setState({
           videos: temp
-        }, () => console.log('this is videos state', this.state.videos))
+        })
       }
+      temp = this.state.latest;
+      temp.push(current);
+      this.setState({
+        latest: temp
+      })
       return current;
     })
-    console.log('this is data', info)
   }
 
   //map function that spread out our view after we get it
@@ -70,19 +76,28 @@ class SideSectionContainer extends Component {
       />
     })
 
+  handleNewistSort = (list) => {
+    /*
+    target the published date in each of the list and return a-b
+    */
+    let sortedList = list.sort((a,b) => new moment(b.metadata.publishDate) - new moment(a.metadata.publishDate))
+    return sortedList
+  }
+
 
   render() {
     let storage;
-    const { articles, videos } = this.state;
+    const { articles, videos, latest } = this.state;
     const { view } = this.props;
 
     if (view === 'articles') {
       storage = articles;
     } else if (view === 'videos') {
       storage = videos;
-    } else {
-      //need to fix for recent
-      storage = articles;
+    } else if (view === 'latest') {
+      storage = this.handleNewistSort(latest);
+      console.log('sorted list fam', storage)
+
     }
 
     return (
