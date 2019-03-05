@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import jsonp from 'jsonp';
-import moment from 'moment';
 import SectionCardContainer from './SectionCardContainer';
 
 class SideSectionContainer extends Component {
@@ -63,6 +62,7 @@ class SideSectionContainer extends Component {
       const itemDate = publishDate;
       return <SectionCardContainer
         key={contentId}
+        contentId={contentId}
         preview={url} 
         title={itemName}
         duration={itemDuration}

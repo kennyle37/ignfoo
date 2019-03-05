@@ -20,7 +20,7 @@ function calculateTimePosted(posted) {
   }
 }
 
-const Card = ({ title, posted }) => {
+const Card = ({ title, posted, commentCount }) => {
   return (
     <div className="col-md-6 col-xs-6 SideSection--card-info">
       <div className="SideSection--post-header">
@@ -31,7 +31,7 @@ const Card = ({ title, posted }) => {
           <img className="SideSection--msg-logo" src={msgLogo} alt="message icon" />
         </span>
         <span className="SideSection--post-comment-count">
-          1
+          {commentCount}
         </span>
       </div>
       <div className="SideSection--post-title">
