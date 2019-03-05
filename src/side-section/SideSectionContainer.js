@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import jsonp from 'jsonp';
-
+import moment from 'moment';
 import SectionCardContainer from './SectionCardContainer';
 
 class SideSectionContainer extends Component {
@@ -55,15 +55,18 @@ class SideSectionContainer extends Component {
   //map function that spread out our view after we get it
   handleDataMap = (list) =>
     list.map(item => {
+      const { headline, duration, publishDate, title } = item.metadata;
       const url = item.thumbnails[0].url;
-      const title = item.metadata.headline ? item.metadata.headline : item.metadata.title;
+      const itemName = headline ? headline : title;
       const contentId = item.contentId;
-      const duration = item.metadata.duration;
+      const itemDuration = duration;
+      const itemDate = publishDate;
       return <SectionCardContainer
         key={contentId}
         preview={url} 
-        title={title}
-        duration={duration}
+        title={itemName}
+        duration={itemDuration}
+        posted={itemDate}
       />
     })
 
