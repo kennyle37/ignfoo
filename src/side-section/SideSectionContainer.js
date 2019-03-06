@@ -30,6 +30,19 @@ class SideSectionContainer extends Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.view !== this.props.view) {
+      this.setState({
+        count: 12, //number of data we are querying for
+        startIndex: 0,
+        data: null, //needs to be an array
+        latest: [],
+        articles: [],
+        videos: [],
+      }, () => this.handleGetData())
+    }
+  }
+
   //function that fetches our data depending on our current view
   handleGetData = () => {
     const { startIndex, count } = this.state;
