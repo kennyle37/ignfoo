@@ -16,6 +16,7 @@ class SideSectionContainer extends Component {
   componentDidMount() {
     this.handleGetData(this.state.startIndex, this.state.count); //get the startIndex and the count to start
     window.addEventListener('scroll', this.debounce(this.handleGetData, 500))
+    // window.addEventListener('scroll', this.handleListScroll(this.handleGetData, this.de))
   }
 
   //import debounce function
@@ -32,21 +33,26 @@ class SideSectionContainer extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.view !== this.props.view) {
-      this.setState({
-        count: 12, //number of data we are querying for
-        startIndex: 0,
-        data: null, //needs to be an array
-        latest: [],
-        articles: [],
-        videos: [],
-      }, () => this.handleGetData())
+      //call handle get data
+      //wait for it to get the data
+      //then set the state to that data
+      if (this.state.data.length > 12) {
+        this.setState({
+          count: 12, //number of data we are querying for
+          startIndex: 0,
+          data: null, //needs to be an array
+          latest: [],
+          articles: [],
+          videos: [],
+        }, () => this.handleGetData())
+      }
     }
   }
 
   //function that fetches our data depending on our current view
   handleGetData = () => {
+    console.log('iran')
     const { startIndex, count } = this.state;
-    console.log(startIndex)
     if (startIndex > 288) return;
     const url = `https://ign-apis.herokuapp.com/content?startIndex=${startIndex}&count=${count}`;
 
@@ -137,9 +143,9 @@ class SideSectionContainer extends Component {
   }
 
   //on our scroll, handle get data calls after user stopped scrolling
-  handleListScroll = (e) => {
-    this.handleGetData(this.state.startIndex, this.state.count);
-  }
+  // handleListScroll = () => {
+
+  // }
 
   render() {
     let storage;
@@ -153,6 +159,7 @@ class SideSectionContainer extends Component {
     } else if (view === 'latest') {
       storage = this.handleNewistSort(latest);
     }
+    console.log('storage', storage)
 
     return (
       <div className="SideSection--row">
