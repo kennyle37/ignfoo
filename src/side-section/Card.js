@@ -21,6 +21,8 @@ function calculateTimePosted(posted) {
 }
 
 const Card = ({ title, posted, commentCount }) => {
+  commentCount = commentCount > 0 ? commentCount : '';
+  
   return (
     <div className="col-md-6 col-xs-6 SideSection--card-info">
       <div className="SideSection--post-header">

@@ -5,36 +5,87 @@ import SectionCardContainer from './SectionCardContainer';
 
 class SideSectionContainer extends Component {
   state = {
-    data: [],
+    count: 12, //number of data we are querying for
+    startIndex: 0,
+    data: null, //needs to be an array
     latest: [],
     articles: [],
     videos: [],
   }
 
   componentDidMount() {
-    this.handleGetData();
+    this.handleGetData(this.state.startIndex, this.state.count); //get the startIndex and the count to start
+    window.addEventListener('scroll', this.debounce(this.handleGetData, 500))
   }
+
+  //import debounce function
+  debounce = (fn, time) => {
+    let timeout;
+
+    return function() {
+      const functionCall = () => fn.apply(this, arguments);
+
+      clearTimeout(timeout);
+      timeout = setTimeout(functionCall, time);
+    }
+  }
+
 
   //function that fetches our data depending on our current view
   handleGetData = () => {
-    const url = 'https://ign-apis.herokuapp.com/content';
-    
+    const { startIndex, count } = this.state;
+    console.log(startIndex)
+    if (startIndex > 288) return;
+    const url = `https://ign-apis.herokuapp.com/content?startIndex=${startIndex}&count=${count}`;
+    let index;
+    // tempState, oldData, newData, updatedList, 
+
     jsonp(url, null, (err, data) => {
       if (err) {
         console.error(err.message);
       } else {
-        this.setState({
-          data
-        }, () => this.handleDataFilter(this.state.data))
+        //need to get the current data object and append it
+        //need to update the state
+        if (this.state.data === null) {
+
+          index = this.state.startIndex;
+          index += 12;
+          this.setState({
+            data: data.data,
+            startIndex: index,
+          }, () => this.handleDataFilter(this.state.data));
+        } else {
+          /*
+          put the current state in a temp
+          target the temp state's data array and append the new fetched data array to it
+          put the newly appended array into our temp state array 
+          set our new state to be the temp state and refilter the item
+          */
+
+          let tempState = this.state;
+          let oldData = tempState.data;
+          let newData = data.data;
+          let updatedList = oldData.concat(newData); 
+          tempState.data = updatedList;
+          tempState.startIndex += count;
+          this.setState({
+            data: tempState.data,
+            startIndex: tempState.startIndex,
+            latest: [],
+            articles: [],
+            videos: [],
+          }, () => this.handleDataFilter(this.state.data));
+
+        }
       }
     })
   }
 
-  //function that filter out our content
+  //takes in a data array and distribute the content to article, video, and latest
   handleDataFilter = (info) => {
     let temp;
 
-    info.data.filter(current => {
+    info.filter(current => {
       if (current.contentType === 'article') {
         temp = this.state.articles;
         temp.push(current);
@@ -76,14 +127,16 @@ class SideSectionContainer extends Component {
       />
     })
 
+  //sort the list by earliest to latest post
   handleNewistSort = (list) => {
-    /*
-    target the published date in each of the list and return a-b
-    */
     let sortedList = list.sort((a,b) => new moment(b.metadata.publishDate) - new moment(a.metadata.publishDate))
     return sortedList
   }
 
+  //on our scroll, handle get data calls after user stopped scrolling
+  handleListScroll = (e) => {
+    this.handleGetData(this.state.startIndex, this.state.count);
+  }
 
   render() {
     let storage;
@@ -96,8 +149,6 @@ class SideSectionContainer extends Component {
       storage = videos;
     } else if (view === 'latest') {
       storage = this.handleNewistSort(latest);
-      console.log('sorted list fam', storage)
-
     }
 
     return (
