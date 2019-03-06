@@ -30,29 +30,22 @@ class SideSectionContainer extends Component {
     }
   }
 
-
   //function that fetches our data depending on our current view
   handleGetData = () => {
     const { startIndex, count } = this.state;
     console.log(startIndex)
     if (startIndex > 288) return;
     const url = `https://ign-apis.herokuapp.com/content?startIndex=${startIndex}&count=${count}`;
-    let index;
-    // tempState, oldData, newData, updatedList, 
 
     jsonp(url, null, (err, data) => {
       if (err) {
         console.error(err.message);
       } else {
-        //need to get the current data object and append it
-        //need to update the state
+        //if it's our first run, just put the first 12 posts in
         if (this.state.data === null) {
-
-          index = this.state.startIndex;
-          index += 12;
           this.setState({
             data: data.data,
-            startIndex: index,
+            startIndex: this.state.startIndex+12,
           }, () => this.handleDataFilter(this.state.data));
         } else {
           /*
@@ -71,10 +64,7 @@ class SideSectionContainer extends Component {
           this.setState({
             data: tempState.data,
             startIndex: tempState.startIndex,
-            latest: [],
-            articles: [],
-            videos: [],
-          }, () => this.handleDataFilter(this.state.data));
+          }, () => this.handleDataFilter(data.data));
 
         }
       }
@@ -112,7 +102,7 @@ class SideSectionContainer extends Component {
   handleDataMap = (list) =>
     list.map(item => {
       const { headline, duration, publishDate, title } = item.metadata;
-      const url = item.thumbnails[0].url;
+      const url = item.thumbnails[0] ? item.thumbnails[0].url : 'http://assets1.ignimgs.com/2018/01/17/nintendo-question-mark-1516191925958_1280w.jpg'; //check for empty thumbnails
       const itemName = headline ? headline : title;
       const contentId = item.contentId;
       const itemDuration = duration;
