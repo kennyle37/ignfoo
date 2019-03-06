@@ -6,7 +6,8 @@ import SectionCardContainer from './SectionCardContainer';
 class SideSectionContainer extends Component {
   state = {
     count: 12, //number of data we are querying for
-    startIndex: 0,
+    scrollY: 0, //direction for our page
+    startIndex: 250,
     data: null, //needs to be an array
     latest: [],
     articles: [],
@@ -15,8 +16,12 @@ class SideSectionContainer extends Component {
 
   componentDidMount() {
     this.handleGetData(this.state.startIndex, this.state.count); //get the startIndex and the count to start
-    window.addEventListener('scroll', this.debounce(this.handleGetData, 500))
-    // window.addEventListener('scroll', this.handleListScroll(this.handleGetData, this.de))
+    this.handleGetData = this.debounce(this.handleGetData, 500);
+    window.addEventListener('scroll', this.handleListScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleGetData);
   }
 
   //import debounce function
@@ -51,7 +56,6 @@ class SideSectionContainer extends Component {
 
   //function that fetches our data depending on our current view
   handleGetData = () => {
-    console.log('iran')
     const { startIndex, count } = this.state;
     if (startIndex > 288) return;
     const url = `https://ign-apis.herokuapp.com/content?startIndex=${startIndex}&count=${count}`;
@@ -73,7 +77,7 @@ class SideSectionContainer extends Component {
           put the newly appended array into our temp state array 
           set our new state to be the temp state and refilter the item
           */
-
+          console.log(this.state.startIndex)
           let tempState = this.state;
           let oldData = tempState.data;
           let newData = data.data;
@@ -143,9 +147,23 @@ class SideSectionContainer extends Component {
   }
 
   //on our scroll, handle get data calls after user stopped scrolling
-  // handleListScroll = () => {
-
-  // }
+  handleListScroll = () => {
+    /*
+    declare our scroll y
+    compare our scroll y with our state's scroll y
+      if the new scroll y is bigger (meaning we moved down)
+        execute our cb call
+      setState and update our new scrollY
+    */
+    let y = window.scrollY;
+    if (y > this.state.scrollY) {
+      console.log('down')
+      this.handleGetData();
+    }
+    this.setState({
+      scrollY: y
+    })
+  }
 
   render() {
     let storage;
@@ -159,7 +177,6 @@ class SideSectionContainer extends Component {
     } else if (view === 'latest') {
       storage = this.handleNewistSort(latest);
     }
-    console.log('storage', storage)
 
     return (
       <div className="SideSection--row">
