@@ -4,10 +4,12 @@ import moment from 'moment';
 import SectionCardContainer from './SectionCardContainer';
 
 class SideSectionContainer extends Component {
+  _isMounted = false;
+
   state = {
     count: 12, //number of data we are querying for
     scrollY: 0, //direction for our page
-    startIndex: 250,
+    startIndex: 0,
     data: null, //needs to be an array
     latest: [],
     articles: [],
@@ -15,13 +17,39 @@ class SideSectionContainer extends Component {
   }
 
   componentDidMount() {
+    this._isMounted = true;
+    console.log(this._isMounted)
     this.handleGetData(this.state.startIndex, this.state.count); //get the startIndex and the count to start
     this.handleGetData = this.debounce(this.handleGetData, 500);
     window.addEventListener('scroll', this.handleListScroll);
   }
 
   componentWillUnmount() {
+    this._isMounted = false;
+    console.log(this._isMounted)
     window.removeEventListener('scroll', this.handleGetData);
+  }
+  
+  componentDidUpdate(prevProps) {
+    if (this._isMounted) {
+      if (prevProps.view !== this.props.view) {
+        //call handle get data
+        //wait for it to get the data
+        //then set the state to that data
+        if (this.state.data.length > 12) {
+          this.setState({
+            count: 12, //number of data we are querying for
+            startIndex: 0,
+            data: null, //needs to be an array
+            latest: [],
+            articles: [],
+            videos: [],
+            numerator: 1,
+            denominator: 2
+          }, () => this.handleGetData())
+        }
+      }
+    }
   }
 
   //import debounce function
@@ -33,24 +61,6 @@ class SideSectionContainer extends Component {
 
       clearTimeout(timeout);
       timeout = setTimeout(functionCall, time);
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.view !== this.props.view) {
-      //call handle get data
-      //wait for it to get the data
-      //then set the state to that data
-      if (this.state.data.length > 12) {
-        this.setState({
-          count: 12, //number of data we are querying for
-          startIndex: 0,
-          data: null, //needs to be an array
-          latest: [],
-          articles: [],
-          videos: [],
-        }, () => this.handleGetData())
-      }
     }
   }
 
@@ -66,10 +76,12 @@ class SideSectionContainer extends Component {
       } else {
         //if it's our first run, just put the first 12 posts in
         if (this.state.data === null) {
-          this.setState({
-            data: data.data,
-            startIndex: this.state.startIndex+12,
-          }, () => this.handleDataFilter(this.state.data));
+          if (this._isMounted) {
+            this.setState(prevState => ({
+              data: data.data,
+              startIndex: prevState.startIndex+12,
+            }), () => this.handleDataFilter(this.state.data))
+          }
         } else {
           /*
           put the current state in a temp
@@ -77,18 +89,19 @@ class SideSectionContainer extends Component {
           put the newly appended array into our temp state array 
           set our new state to be the temp state and refilter the item
           */
-          console.log(this.state.startIndex)
+          // console.log(this.state.startIndex)
           let tempState = this.state;
           let oldData = tempState.data;
           let newData = data.data;
           let updatedList = oldData.concat(newData); 
           tempState.data = updatedList;
           tempState.startIndex += count;
-          this.setState({
-            data: tempState.data,
-            startIndex: tempState.startIndex,
-          }, () => this.handleDataFilter(data.data));
-
+          if (this._isMounted) {
+            this.setState({
+              data: tempState.data,
+              startIndex: tempState.startIndex,
+            }, () => this.handleDataFilter(data.data));
+          }
         }
       }
     })
@@ -148,21 +161,37 @@ class SideSectionContainer extends Component {
 
   //on our scroll, handle get data calls after user stopped scrolling
   handleListScroll = () => {
-    /*
-    declare our scroll y
-    compare our scroll y with our state's scroll y
-      if the new scroll y is bigger (meaning we moved down)
-        execute our cb call
-      setState and update our new scrollY
-    */
     let y = window.scrollY;
-    if (y > this.state.scrollY) {
-      console.log('down')
+    let height = document.getElementsByClassName("SideSection--container")[0].clientHeight;
+    let numerator = 1;
+    let denominator = 2;
+    let offset = 350;
+
+    if (height < 1500) {
+      numerator = 1;
+      denominator = 2;
+      offset = 350
+    } else if (height >= 1500 && height < 2500) {
+      offset = 0;
+    } else if (height >= 2500 && height < 5000) {
+      numerator = 3;
+      denominator = 4;
+    } else if (height >= 5000 && height < 10000){
+      numerator = 8;
+      denominator = 10;
+    } else {
+      numerator = 9;
+      denominator = 10;
+    }
+    
+    let breakpoint = Math.floor((height * numerator) / denominator) - offset;
+
+    // console.log('y', y)
+    // console.log('height', height)
+    // console.log('breakpoint', breakpoint)
+    if (y > breakpoint) {
       this.handleGetData();
     }
-    this.setState({
-      scrollY: y
-    })
   }
 
   render() {

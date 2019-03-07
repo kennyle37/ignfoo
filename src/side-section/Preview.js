@@ -36,12 +36,17 @@ function timeConverter(duration) {
 }
 
 const Preview = ({ preview, duration }) => {
-  const visible = duration ? 'SideSection--card-duration-container' : 'SideSection--card-duration-container hidden';
+  let visible = duration ? 'SideSection--card-duration-container' : 'SideSection--card-duration-container hidden';
   let time;
 
   if (duration) {
     time = timeConverter(duration);
+
+    if (time && time.length >= 6) {
+      visible += ' stretched'
+    }
   }
+  
 
   return (
     <div className="col-md-6 col-xs-6 SideSection--card-preview">
