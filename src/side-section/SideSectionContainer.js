@@ -29,24 +29,26 @@ class SideSectionContainer extends Component {
     console.log(this._isMounted)
     window.removeEventListener('scroll', this.handleGetData);
   }
-  
+
   componentDidUpdate(prevProps) {
     if (this._isMounted) {
       if (prevProps.view !== this.props.view) {
         //call handle get data
         //wait for it to get the data
         //then set the state to that data
-        if (this.state.data.length > 12) {
-          this.setState({
-            count: 12, //number of data we are querying for
-            startIndex: 0,
-            data: null, //needs to be an array
-            latest: [],
-            articles: [],
-            videos: [],
-            numerator: 1,
-            denominator: 2
-          }, () => this.handleGetData())
+        if (this.state.data) {
+          if (this.state.data.length > 12) {
+            this.setState({
+              count: 12, //number of data we are querying for
+              startIndex: 0,
+              data: null, //needs to be an array
+              latest: [],
+              articles: [],
+              videos: [],
+              numerator: 1,
+              denominator: 2
+            }, () => this.handleGetData())
+          }
         }
       }
     }
