@@ -472,3 +472,76 @@ li {
     display: none;
   }
 }
+
+// ______   ___   ____  ____    ____  __ __ 
+// |      | /   \ |    \|    \  /    ||  |  |
+// |      ||     ||  o  )  _  ||  o  ||  |  |
+// |_|  |_||  O  ||   _/|  |  ||     ||  |  |
+//   |  |  |     ||  |  |  |  ||  _  ||  :  |
+//   |  |  |     ||  |  |  |  ||  |  | \   / 
+//   |__|   \___/ |__|  |__|__||__|__|  \_/  
+                                        
+.MobileNav {
+  &--container {
+    display: none;
+    position: relative;
+    margin: auto 20px;
+    padding-right: 10px;
+    height: 25px;
+    bottom: 3px;
+    font-size: 18px;
+  }
+}
+
+//LARGE DESKTOP
+@media screen and (min-width: $largeDesktop) {
+
+} 
+
+//SMALL DESKTOP
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+  .MobileNav {
+    &--container {
+      display: inline-block;
+    }
+  }
+} 
+
+//VERTICAL TABLET
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+  .MobileNav {
+    &--container {
+      display: inline-block;
+      font-size: 24px;
+      height: 30px;
+      bottom: 3px;
+    }
+  }
+} 
+
+//SMALL TABLET
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+  .MobileNav {
+    &--container {
+      display: inline-block;
+      margin: auto 15px;
+      font-size: 22px;
+      height: 30px;
+      bottom: 3px;
+    }
+  }
+} 
+
+//Mobile
+@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+  .MobileNav {
+    &--container {
+      display: inline-block;
+      margin: auto 15px;
+      font-size: 18px;
+      height: 28px;
+      bottom: 2.5px;
+      padding-right: 4px;
+    }
+  }
+}

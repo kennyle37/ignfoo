@@ -10,7 +10,6 @@ const SideNavCardContainer = ({ handleCurrentView }) => {
   return (
     <div className="row SideNav--card-container">
       <NavItem active="active" handleSelection={handleCurrentView} icon={latest} description="Latest" />
-
       <NavItem handleSelection={handleCurrentView} icon={play} description="Videos" />
       <NavItem handleSelection={handleCurrentView} icon={doc} description="Articles" />
     </div>
