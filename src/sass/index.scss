@@ -15,9 +15,17 @@ $borderRadius: 3px;
 SCREEN SIZES
 */
 $largeDesktop: 1440px;
+$largeDesktopCap: 1439px;
+
 $smallDesktop: 1024px;
+$smallDesktopCap: 1023px;
+
 $verticalTablet: 768px;
+$verticalTabletCap: 767px;
+
 $smallTablet: 600px;
+$smallTabletCap: 599px;
+
 $mobile: 250px;
 
 body {
@@ -38,26 +46,30 @@ body {
 } 
 
 //SMALL DESKTOP
-@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktop) {
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
   .container {
-    margin: auto 50px;
+    margin: auto 150px;
   }
 } 
 
 //VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktop) {
-
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+  .container {
+    margin: auto 25px;
+  }
 } 
 
 //SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTablet) {
-
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+  .container {
+    margin: auto 30px;
+  }
 } 
 
 //MOBILE
-@media screen and (min-width: $mobile) and (max-width: $smallTablet) {
+@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
   .container {
-    margin: auto 10px;
+    margin: auto 12px;
   }
 } 
 
@@ -74,6 +86,7 @@ body {
   &--container {
     padding-right: 0px;
     padding-left: 0px;
+    padding-bottom: 5px;
     border-bottom: .5px solid lightgray;
   }
   &--title {
@@ -88,26 +101,46 @@ body {
 } 
 
 //SMALL DESKTOP
-@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktop) {
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
 
 } 
 
 //VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktop) {
-
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+  .TopHeader {
+    &--container {
+      border-bottom: .5px solid lightgray;
+    }
+    &--title {
+      font-size: 42px;
+    }
+    &--title-mobile {
+      display: none;
+      padding: auto;
+    }
+  }
 } 
 
 //SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTablet) {
-
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+  .TopHeader {
+    &--container {
+      border-bottom: .5px solid lightgray;
+    }
+    &--title {
+      font-size: 32px;
+    }
+    &--title-mobile {
+      display: none;
+      padding: auto;
+    }
+  }
 } 
 
 //MOBILE
-@media screen and (min-width: $mobile) and (max-width: $smallTablet) {
+@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
   .TopHeader {
     &--container {
-      padding-left: 0px;
-      padding-right: 0px;
       border-bottom: .5px solid lightgray;
     }
     &--title {
@@ -167,28 +200,37 @@ li {
   list-style-type: none;
 }
 
+//LARGE DESKTOP
 @media screen and (min-width: $largeDesktop) {
+
 } 
 
 //SMALL DESKTOP
-@media screen and (min-width: $smallDesktop ) and (max-width: $largeDesktop) {
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+  .SideNav--container {
+    display: none;
+  }
 } 
 
 //VERTICAL TABLET
-@media screen and (max-width: $verticalTablet) and (max-width: $smallDesktop) {
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
   .SideNav--container {
     display: none;
   }
 } 
 
 //SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTablet) {
-
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+  .SideNav--container {
+    display: none;
+  }
 } 
 
 //Mobile
-@media screen and (min-width: $mobile) and (max-width: $smallTablet) {
-
+@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+  .SideNav--container {
+    display: none;
+  }
 }
 
 // ___    ___    ___   _____  _  _____  _   _ 
@@ -311,22 +353,22 @@ li {
 } 
 
 //SMALL DESKTOP
-@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktop) {
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
 
 } 
 
 //VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktop) {
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
 
 } 
 
 //SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTablet) {
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
 
 } 
 
 //MOBILE
-@media screen and (min-width: $mobile) and (max-width: $smallTablet) {
+@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
   .SideSection {
     &--img {
       width: 100%;
