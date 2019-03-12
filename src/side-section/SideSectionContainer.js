@@ -20,7 +20,7 @@ class SideSectionContainer extends Component {
     this._isMounted = true;
     console.log(this._isMounted)
     this.handleGetData(this.state.startIndex, this.state.count); //get the startIndex and the count to start
-    this.handleGetData = this.debounce(this.handleGetData, 500);
+    this.handleGetData = this.debounce(this.handleGetData, 250);
     window.addEventListener('scroll', this.handleListScroll);
   }
 

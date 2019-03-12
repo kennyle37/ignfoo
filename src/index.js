@@ -22,6 +22,12 @@ class App extends Component {
     })
   }
 
+  handleMobileCurrentView = (view) => {
+    this.setState({
+      view: view  
+    })
+  }
+
   render() {
     const view = this.state.view.toLowerCase();
 
@@ -29,7 +35,7 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12 col-xs-12 TopHeader--container">
-            <TopHeaderContainer mobileTitle="Latest" pcTitle="News" />
+            <TopHeaderContainer mobileTitle="Latest" pcTitle="News" handleCurrentView={this.handleMobileCurrentView} />
           </div>
         </div>
 
