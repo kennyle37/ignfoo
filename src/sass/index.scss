@@ -11,6 +11,15 @@ $heavyBold: 900;
 $redBackground: #bf1313;
 $borderRadius: 3px;
 
+/*
+SCREEN SIZES
+*/
+$largeDesktop: 1440px;
+$smallDesktop: 1024px;
+$verticalTablet: 768px;
+$smallTablet: 600px;
+$mobile: 250px;
+
 body {
   margin: 0;
   font-size: 16px;
@@ -22,10 +31,31 @@ body {
   max-width: 1200px;
   margin: 0px auto;
 }
-// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
 
-// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
-@media screen and (max-width: 768px) {
+//LARGE DESKTOP
+@media screen and (min-width: $largeDesktop) {
+
+} 
+
+//SMALL DESKTOP
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktop) {
+  .container {
+    margin: auto 50px;
+  }
+} 
+
+//VERTICAL TABLET
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktop) {
+
+} 
+
+//SMALL TABLET
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTablet) {
+
+} 
+
+//MOBILE
+@media screen and (min-width: $mobile) and (max-width: $smallTablet) {
   .container {
     margin: auto 10px;
   }
@@ -43,8 +73,8 @@ body {
 .TopHeader {
   &--container {
     padding-right: 0px;
+    padding-left: 0px;
     border-bottom: .5px solid lightgray;
-    // margin: 0px 16px 0px 0px;
   }
   &--title {
     font-size: 36px;
@@ -52,15 +82,28 @@ body {
   }
 }
 
-// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
-@media screen and (min-width: 769px) {
-  .TopHeader--container {
-    padding-left: 0px;
-  }
-}
+//LARGE DESKTOP
+@media screen and (min-width: $largeDesktop) {
 
-// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
-@media screen and (max-width: 768px) {
+} 
+
+//SMALL DESKTOP
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktop) {
+
+} 
+
+//VERTICAL TABLET
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktop) {
+
+} 
+
+//SMALL TABLET
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTablet) {
+
+} 
+
+//MOBILE
+@media screen and (min-width: $mobile) and (max-width: $smallTablet) {
   .TopHeader {
     &--container {
       padding-left: 0px;
@@ -124,13 +167,28 @@ li {
   list-style-type: none;
 }
 
-// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+@media screen and (min-width: $largeDesktop) {
+} 
 
-// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
-@media screen and (max-width: 768px) {
+//SMALL DESKTOP
+@media screen and (min-width: $smallDesktop ) and (max-width: $largeDesktop) {
+} 
+
+//VERTICAL TABLET
+@media screen and (max-width: $verticalTablet) and (max-width: $smallDesktop) {
   .SideNav--container {
     display: none;
   }
+} 
+
+//SMALL TABLET
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTablet) {
+
+} 
+
+//Mobile
+@media screen and (min-width: $mobile) and (max-width: $smallTablet) {
+
 }
 
 // ___    ___    ___   _____  _  _____  _   _ 
@@ -247,13 +305,30 @@ li {
   display: none;
 }
 
-// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+//LARGE DESKTOP
+@media screen and (min-width: $largeDesktop) {
 
-// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
-@media screen and (max-width: 768px) {
+} 
+
+//SMALL DESKTOP
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktop) {
+
+} 
+
+//VERTICAL TABLET
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktop) {
+
+} 
+
+//SMALL TABLET
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTablet) {
+
+} 
+
+//MOBILE
+@media screen and (min-width: $mobile) and (max-width: $smallTablet) {
   .SideSection {
     &--img {
-      // margin: auto auto auto 10px;
       width: 100%;
       height: 100%;
       max-width: 160px;
@@ -267,7 +342,6 @@ li {
       cursor: pointer;
     }
     &--card-container {
-      // margin: auto 10px auto 10px;
       border-bottom: .5px solid lightgray;
     }
   }
