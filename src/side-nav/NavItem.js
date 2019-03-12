@@ -6,7 +6,7 @@ const NavItem = ({ active, handleSelection, icon, description }) => {
   return (
     <li className={name} onClick={handleSelection}>
       <span className="col-md-3 col-xs-6 SideNav--card-logo">
-        <i className={icon} />
+        <img className="SideNav--display-icon" src={icon} alt="logo" />
       </span>
       <span className="col-md-6 col-xs-6 SideNav--card-description">{description}</span>
     </li> 
