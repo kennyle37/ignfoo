@@ -378,6 +378,9 @@ li {
   }
 } 
 
+//RANDOM BREAKPOINT
+// @media screen and (min-width: 1040px) and (max-width: )
+
 //SMALL DESKTOP
 @media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
   .SideSection {
@@ -409,9 +412,6 @@ li {
       top: 158px;
       left: 8px;
     }
-    // &--filler {
-    //   display: none;
-    // }
   }
   .hidden {
     display: none;
