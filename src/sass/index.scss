@@ -49,43 +49,55 @@ body {
   margin: 0px auto;
 }
 
-//LARGE DESKTOP
-@media screen and (min-width: $largeDesktop) {
-
-} 
-
-//SMALL DESKTOP
-@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+/* for sumo sized (mac) screens */
+@media only screen and (min-width: 2000px) {
   .container {
-    margin: auto 150px;
+    margin: auto 250px;
   }
-} 
+}
 
-//VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+/* styles for browsers larger than 1440px; */
+@media only screen and (min-width: 1440px) {
+  .container {
+    margin: auto 200px;
+  }
+}
+
+/* styles for browsers larger than 960px; */
+@media only screen and (min-width: 960px) {
   .container {
     margin: auto 25px;
   }
-} 
+}
 
-//SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+/* default iPad screens */
+@media only screen and (device-width: 768px) {
   .container {
-    margin: auto 30px;
+    margin: auto 15px;
   }
-} 
+}
 
-//IN BETWEEN SMALL TABLET
-@media screen and (min-width: $inBetweenSmallTabletCap) and (max-width: $inBetweenSmallTablet) {
-
-} 
-
-//MOBILE
-@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+@media only screen and (max-device-width: 480px) {
   .container {
     margin: auto 12px;
   }
-} 
+}
+
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+/* For portrait layouts only */
+  .container {
+    margin: auto 15px;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+/* For landscape layouts only */
+  .container {
+    margin: auto 15px;
+  }
+}
 
 //  _                         _                        _              
 // ( )_                      ( )                      ( )             
