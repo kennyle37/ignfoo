@@ -488,18 +488,18 @@ li {
   }
 } 
 
-// IN BETWEEN SMALL TABLET
-@media screen and (min-width: $inBetweenSmallTabletCap) {
-  .SideSection {
-    &--img {
-      width: 100%;
-      height: 100%;
-      max-width: 425px;
-      max-height: 300px;
-      border-radius: 3px;
-    }
-  }
-} 
+// // IN BETWEEN SMALL TABLET
+// @media screen and (min-width: $inBetweenSmallTabletCap) {
+//   .SideSection {
+//     &--img {
+//       width: 100%;
+//       height: 100%;
+//       max-width: 425px;
+//       max-height: 300px;
+//       border-radius: 3px;
+//     }
+//   }
+// } 
 
 //MOBILE
 // @media screen and (min-width: $mobile) and (max-width: $inBetweenSmallTabletCap){
@@ -511,30 +511,6 @@ li {
   //     max-height: 85px;
   //     border-radius: 3px;
   //   }
-  //   &--card-duration-container {
-  //     display: inline-block;
-  //     width: 100%;
-  //     height: 100%;
-  //     max-height: 20px;
-  //     max-width: 40px;
-  //     border-radius: 4px;
-  //     position: absolute;
-  //     top: 60px;
-  //     left: 6px;
-  //   }
-  //   &--card-duration {
-  //     display: none;
-  //   }
-  // }
-  // .circle {
-  //   display: inline-block;
-  //   width: 20px;
-  //   margin-right: 0px;
-  //   border-radius: 50%;
-  // }
-  // .hidden {
-  //   display: none;
-  // }
 // }
 
 // /* for sumo sized (mac) screens */
@@ -610,21 +586,20 @@ li {
   .hidden {
     display: none;
   }
-}
-
-/* styles for mobile browsers that's in our blind spot (300-448) */
-@media only screen and (min-device-width: 430px) and (max-device-width: 480px) {
-  .SideSection {
-    &--card-duration-container {
-      display: inline-block;
-      width: 80%;
-      height: 80%;
-      max-height: 18px;
-      max-width: 40px;
-      border-radius: 4px;
-      position: absolute;
-      top: 85px;
-      left: 6px;
+  /* styles for mobile browsers that's in our blind spot (430-480) */
+  @media only screen and (min-device-width: 430px) and (max-device-width: 480px) {
+    .SideSection {
+      &--card-duration-container {
+        display: inline-block;
+        width: 80%;
+        height: 80%;
+        max-height: 18px;
+        max-width: 40px;
+        border-radius: 4px;
+        position: absolute;
+        top: 85px;
+        left: 6px;
+      }
     }
   }
 }
@@ -635,9 +610,30 @@ li {
 /* For portrait layouts only */
   .SideSection {
     &--post-title {
-      // line-height: 1.90rem;
       font-weight: $lightBold;
       font-size: 20px !important;
+    }
+    &--card-duration-container {
+      top: 90px;
+      left: 6px;
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 522px) and (max-device-width: 580px) and (orientation:portrait) {
+    .SideSection {
+      &--card-duration-container {
+        top: 105px;
+        left: 6px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 581px) and (max-device-width: 768px) and (orientation:portrait) {
+    .SideSection {
+      &--card-duration-container {
+        top: 120px;
+        left: 8px;
+      }
     }
   }
 }
@@ -649,6 +645,17 @@ li {
       line-height: 1.90rem;
       font-weight: $lightBold;
       font-size: 20px;
+    }
+    &--img {
+      width: 100%;
+      height: 100%;
+      max-width: 450px;
+      max-height: 300px;
+      border-radius: 3px;
+    }
+    &--card-duration-container {
+      top: 220px;
+      left: 12px;
     }
   }
 }
