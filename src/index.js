@@ -40,15 +40,15 @@ class App extends Component {
         </div>
 
         <div className="row">  
-          <div className="col-lg-3 col-md-4 col-xs-12 SideNav--container">
+          <div className="col-md-3 col-xs-12 SideNav--container">
             <SideNavDisplayContainer handleCurrentView={this.handleCurrentView} />
           </div>
 
-          <div className="col-lg-6 col-md-8 col-xs-12 SideSection--container">
+          <div className="col-md-6 col-xs-12 SideSection--container">
             <SideSectionContainer view={view} />
           </div>
           
-          <div className="col-lg-3 col-md-3 hide-sm-only hide-xs-only SideSection--filler" />
+          <div className="col-md-3 hide-sm-only hide-xs-only SideSection--filler" />
         </div>
       </div>
     )
