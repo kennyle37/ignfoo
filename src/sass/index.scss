@@ -693,15 +693,6 @@ li {
       }
     }
   }
-  // /* styles for tablet browsers that's in our blind spot */
-  // @media only screen and (min-device-width: 481px) and (max-device-width: 522px) and (orientation:landscape) {
-  //   .SideSection {
-  //     &--card-duration-container {
-  //       top: 100px;
-  //       left: 6px;
-  //     }
-  //   }
-  // }
 }
 
 
@@ -730,23 +721,22 @@ li {
 
 } 
 
-//SMALL DESKTOP
-@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+// /* for sumo sized (mac) screens */
+@media only screen and (min-width: 2000px) {
+
+}
+
+// /* styles for browsers larger than 1440px; */
+@media only screen and (min-width: 1440px) {
   .MobileNav {
     &--container {
-      display: inline-block;
+      display: none !important;
     }
   }
-  .TopHeader {
-    &--title-mobile {
-      display: none;
-      padding: auto;
-    }
-  }
-} 
+}
 
-//Random Offset
-@media screen and (min-width: 1025px) and (max-width: 1038px) {
+/* styles for browsers larger than 960px; */
+@media only screen and (min-width: 960px) {
   .MobileNav {
     &--container {
       display: inline-block;
@@ -760,8 +750,8 @@ li {
   }
 }
 
-//VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktop) {
+/* default iPad screens */
+@media only screen and (device-width: 768px) {
   .MobileNav {
     &--container {
       display: inline-block;
@@ -770,23 +760,10 @@ li {
       bottom: 3px;
     }
   }
-} 
+}
 
-//SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
-  .MobileNav {
-    &--container {
-      display: inline-block;
-      margin: auto 15px;
-      font-size: 22px;
-      height: 30px;
-      bottom: 3px;
-    }
-  }
-} 
-
-//Mobile
-@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+@media only screen and (max-device-width: 480px) {
   .MobileNav {
     &--container {
       display: inline-block;
@@ -795,6 +772,32 @@ li {
       height: 28px;
       bottom: 2.5px;
       padding-right: 4px;
+    }
+  }
+}
+
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+/* For portrait layouts only */
+  .MobileNav {
+    &--container {
+      display: inline-block;
+      font-size: 24px;
+      height: 30px;
+      bottom: 3px;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+/* For landscape layouts only */
+  .MobileNav {
+    &--container {
+      display: inline-block;
+      margin: auto 15px;
+      font-size: 22px;
+      height: 30px;
+      bottom: 3px;
     }
   }
 }
