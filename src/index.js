@@ -48,7 +48,7 @@ class App extends Component {
             <SideSectionContainer view={view} />
           </div>
           
-          <div className="col-lg-3 col-md-3 hide-sm-only hide-xs-only" />
+          <div className="col-lg-3 col-md-3 hide-sm-only hide-xs-only SideSection--filler" />
         </div>
       </div>
     )

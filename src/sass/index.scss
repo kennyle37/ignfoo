@@ -220,6 +220,9 @@ li {
 
 //SMALL DESKTOP
 @media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+  .SideNav--container {
+    display: none;
+  }
 } 
 
 //Random Offset
@@ -531,11 +534,17 @@ li {
 
 //SMALL DESKTOP
 @media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
-  // .MobileNav {
-  //   &--container {
-  //     display: inline-block;
-  //   }
-  // }
+  .MobileNav {
+    &--container {
+      display: inline-block;
+    }
+  }
+  .TopHeader {
+    &--title-mobile {
+      display: none;
+      padding: auto;
+    }
+  }
 } 
 
 //Random Offset
@@ -554,7 +563,7 @@ li {
 }
 
 //VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktop) {
   .MobileNav {
     &--container {
       display: inline-block;
