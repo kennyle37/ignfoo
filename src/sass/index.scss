@@ -120,10 +120,6 @@ body {
     &--container {
       border-bottom: 2px solid lightgray;
     }
-    &--title-mobile {
-      display: none;
-      padding: auto;
-    }
   }
 } 
 
@@ -224,10 +220,14 @@ li {
 
 //SMALL DESKTOP
 @media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+} 
+
+//Random Offset
+@media screen and (min-width: 1025px) and (max-width: 1038px) {
   .SideNav--container {
     display: none;
   }
-} 
+}
 
 //VERTICAL TABLET
 @media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
@@ -302,7 +302,6 @@ li {
   }
 
   &--card-info {
-    // border: .5px solid red;
     padding-left: 0px;
     padding-right: 0px;
   }
@@ -398,6 +397,9 @@ li {
       position: absolute;
       top: 158px;
       left: 8px;
+    }
+    &--filler {
+      display: none;
     }
   }
   .hidden {
@@ -529,12 +531,27 @@ li {
 
 //SMALL DESKTOP
 @media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+  // .MobileNav {
+  //   &--container {
+  //     display: inline-block;
+  //   }
+  // }
+} 
+
+//Random Offset
+@media screen and (min-width: 1025px) and (max-width: 1038px) {
   .MobileNav {
     &--container {
       display: inline-block;
     }
   }
-} 
+  .TopHeader {
+    &--title-mobile {
+      display: none;
+      padding: auto;
+    }
+  }
+}
 
 //VERTICAL TABLET
 @media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
