@@ -1,11 +1,12 @@
 import React from 'react';
+import MobileNav from './MobileNav';
 
-const TopHeaderContainer = (props) => {
+const TopHeaderContainer = ({ mobileTitle, pcTitle, handleCurrentView }) => {
   return (
     <div className="TopHeader--title">
-      <span className="TopHeader--title-mobile">{props.mobileTitle}</span> {props.pcTitle}
+      <span className="TopHeader--title-mobile">{mobileTitle}</span> {pcTitle}
+      <MobileNav handleCurrentView={handleCurrentView} />
     </div>
-              
   )
 }
 

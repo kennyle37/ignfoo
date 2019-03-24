@@ -1,11 +1,37 @@
 @import "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/main.css";
+/*
+FONT STYLES
+*/
+$fontStyle: 'ars-maquette-web', sans-serif;
 $fontColor: #252627;
+$whiteFontColor: #fff;
+$lightBold: 300;
+$mediumBold: 600;
+$heavyBold: 900;
+$redBackground: #bf1313;
+$borderRadius: 3px;
+
+/*
+SCREEN SIZES
+*/
+$largeDesktop: 1440px;
+$largeDesktopCap: 1439px;
+
+$smallDesktop: 1024px;
+$smallDesktopCap: 1023px;
+
+$verticalTablet: 768px;
+$verticalTabletCap: 767px;
+
+$smallTablet: 600px;
+$smallTabletCap: 599px;
+
+$mobile: 250px;
 
 body {
   margin: 0;
   font-size: 16px;
-  font-family: 'ars-maquette-web', sans-serif;
-  // padding: 0px;
+  font-family: $fontStyle;
   color: $fontColor;
 }
 
@@ -13,12 +39,37 @@ body {
   max-width: 1200px;
   margin: 0px auto;
 }
-// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
 
-// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
-@media screen and (max-width: 768px) {
+//LARGE DESKTOP
+@media screen and (min-width: $largeDesktop) {
+
+} 
+
+//SMALL DESKTOP
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
   .container {
-    margin: auto 10px;
+    margin: auto 150px;
+  }
+} 
+
+//VERTICAL TABLET
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+  .container {
+    margin: auto 25px;
+  }
+} 
+
+//SMALL TABLET
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+  .container {
+    margin: auto 30px;
+  }
+} 
+
+//MOBILE
+@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+  .container {
+    margin: auto 12px;
   }
 } 
 
@@ -34,30 +85,66 @@ body {
 .TopHeader {
   &--container {
     padding-right: 0px;
-    border-bottom: .5px solid lightgray;
-    // margin: 0px 16px 0px 0px;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    border-bottom: 1.5px solid lightgray;
   }
   &--title {
     font-size: 36px;
-    font-weight: 900;
+    font-weight: $heavyBold;
   }
 }
 
-// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
-@media screen and (min-width: 769px) {
-  .TopHeader--container {
-    padding-left: 0px;
-  }
-}
+//LARGE DESKTOP
+@media screen and (min-width: $largeDesktop) {
 
-// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
-@media screen and (max-width: 768px) {
+} 
+
+//SMALL DESKTOP
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
   .TopHeader {
     &--container {
-      padding-left: 0px;
-      padding-right: 0px;
-      border-bottom: .5px solid lightgray;
+      border-bottom: 2px solid lightgray;
     }
+    &--title-mobile {
+      display: none;
+      padding: auto;
+    }
+  }
+} 
+
+//VERTICAL TABLET
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+  .TopHeader {
+    &--container {
+      border-bottom: 2px solid lightgray;
+    }
+    &--title {
+      font-size: 42px;
+    }
+    &--title-mobile {
+      display: none;
+      padding: auto;
+    }
+  }
+} 
+
+//SMALL TABLET
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+  .TopHeader {
+    &--title {
+      font-size: 32px;
+    }
+    &--title-mobile {
+      display: none;
+      padding: auto;
+    }
+  }
+} 
+
+//MOBILE
+@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+  .TopHeader {
     &--title {
       font-size: 26px;
     }
@@ -93,32 +180,57 @@ body {
     color: gray;
     cursor: pointer;
   }
-  &--card-logo {
-    height: 100%;
-    width: 100%;
-    max-height: 50px;
-    max-width: 50px;
+  &--display-icon {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    top: 5px;
   }
   &--card-description {
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: $mediumBold;
     padding: 0px;
   }
 }
 .active {
-  background-color: #bf1313;
-  color: #fff;
-  font-weight: 800;
-  border-radius: 3px;
+  background-color: $redBackground;
+  color: $whiteFontColor;
+  font-weight: $mediumBold;
+  border-radius: $borderRadius;
 }
 
 li {
   list-style-type: none;
 }
 
-// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+//LARGE DESKTOP
+@media screen and (min-width: $largeDesktop) {
 
-// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
-@media screen and (max-width: 768px) {
+} 
+
+//SMALL DESKTOP
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+  .SideNav--container {
+    display: none;
+  }
+} 
+
+//VERTICAL TABLET
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+  .SideNav--container {
+    display: none;
+  }
+} 
+
+//SMALL TABLET
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+  .SideNav--container {
+    display: none;
+  }
+} 
+
+//Mobile
+@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
   .SideNav--container {
     display: none;
   }
@@ -148,8 +260,33 @@ li {
   &--card-preview {
     padding-left: 0px;
     cursor: pointer;
+    position: relative;
     // margin: auto 0px auto 0px;
   }
+  &--card-duration-container {
+    background-color: $redBackground;
+    display: inline-block;
+    width: 100%;
+    max-width: 85px;
+    border-radius: $borderRadius;
+    color: $whiteFontColor;
+    font-weight: $mediumBold;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 133px;
+    left: 8px;
+  }
+  &--card-icon {
+    color: $redBackground;
+  }
+  &--card-duration {
+    font-size: 16px;
+    font-weight: $mediumBold;
+    letter-spacing: .05em;
+  }
+
   &--card-info {
     // border: .5px solid red;
     padding-left: 0px;
@@ -157,8 +294,8 @@ li {
   }
   &--post-header {
     font-size: 14px;
-    color: #bf1313;
-    font-weight: 600;
+    color: $redBackground;
+    font-weight: $mediumBold;
     margin: 0 0 10px 0;
   }
   &--post-time {
@@ -174,7 +311,7 @@ li {
   &--post-title {
     color: black;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: $mediumBold;
     cursor: pointer;
   }
   &--img {
@@ -182,7 +319,7 @@ li {
     height: 100%;
     max-width: 285px;
     max-height: 172px;
-    border-radius: 3px;
+    border-radius: $borderRadius;
   }
   &--msg-logo {
     width: 15px;
@@ -190,13 +327,114 @@ li {
   }
 }
 
-// FOR PC SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
+.circle {
+  background-color: $whiteFontColor;
+  display: inline-block;
+  width: 20px;
+  margin-right: 7px;
+  border-radius: 50%;
+  padding-left: 2px;
+}
 
-// FOR MOBILE SCREEN (WILL NEED TO GET ACTUAL AMOUNT)
-@media screen and (max-width: 768px) {
+.fa-play {
+  font-size: .60rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.stretched {
+  max-width: 105px;
+}
+
+.hidden {
+  display: none;
+}
+
+//LARGE DESKTOP
+@media screen and (min-width: $largeDesktop) {
+
+} 
+
+//SMALL DESKTOP
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
   .SideSection {
     &--img {
-      // margin: auto auto auto 10px;
+      width: 100%;
+      height: 100%;
+      max-width: 330px;
+      max-height: 200px;
+      border-radius: 3px;
+    }
+    &--post-title {
+      color: black;
+      font-size: 22px;
+      line-height: 1.90rem;
+      font-weight: $lightBold;
+    }
+    &--card-duration-container {
+      background-color: #bf1313;
+      display: inline-block;
+      width: 100%;
+      max-width: 85px;
+      border-radius: 3px;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      position: absolute;
+      top: 158px;
+      left: 8px;
+    }
+  }
+  .hidden {
+    display: none;
+  }
+} 
+
+//VERTICAL TABLET
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+  .SideSection {
+    &--img {
+      width: 100%;
+      height: 100%;
+      max-width: 340px;
+      max-height: 200px;
+      border-radius: 3px;
+    }
+    &--post-title {
+      color: black;
+      font-size: 22px;
+      line-height: 1.90rem;
+      font-weight: $lightBold;
+    }
+    &--card-duration-container {
+      top: 160px;
+      left: 12px;
+    }
+  }
+} 
+
+//SMALL TABLET
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+  .SideSection {
+    &--post-title {
+      color: black;
+      font-size: 18px;
+      line-height: 1.5rem;
+      font-weight: $lightBold;
+    }
+    &--card-duration-container {
+      top: 118px;
+      left: 6px;
+    }
+  }
+} 
+
+//MOBILE
+@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+  .SideSection {
+    &--img {
       width: 100%;
       height: 100%;
       max-width: 160px;
@@ -206,12 +444,104 @@ li {
     &--post-title {
       color: black;
       font-size: 15px;
-      font-weight: 500;
-      cursor: pointer;
+      line-height: 1.15rem;
+      font-weight: $lightBold;
     }
-    &--card-container {
-      // margin: auto 10px auto 10px;
-      border-bottom: .5px solid lightgray;
+    &--card-duration-container {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      max-height: 20px;
+      max-width: 40px;
+      border-radius: 4px;
+      position: absolute;
+      top: 60px;
+      left: 6px;
+    }
+    &--card-duration {
+      display: none;
+    }
+  }
+  .circle {
+    display: inline-block;
+    width: 20px;
+    margin-right: 0px;
+    border-radius: 50%;
+  }
+  .hidden {
+    display: none;
+  }
+}
+
+// ______   ___   ____  ____    ____  __ __ 
+// |      | /   \ |    \|    \  /    ||  |  |
+// |      ||     ||  o  )  _  ||  o  ||  |  |
+// |_|  |_||  O  ||   _/|  |  ||     ||  |  |
+//   |  |  |     ||  |  |  |  ||  _  ||  :  |
+//   |  |  |     ||  |  |  |  ||  |  | \   / 
+//   |__|   \___/ |__|  |__|__||__|__|  \_/  
+                                        
+.MobileNav {
+  &--container {
+    display: none;
+    position: relative;
+    margin: auto 20px;
+    padding-right: 10px;
+    height: 25px;
+    bottom: 3px;
+    font-size: 18px;
+  }
+}
+
+//LARGE DESKTOP
+@media screen and (min-width: $largeDesktop) {
+
+} 
+
+//SMALL DESKTOP
+@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+  .MobileNav {
+    &--container {
+      display: inline-block;
+    }
+  }
+} 
+
+//VERTICAL TABLET
+@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+  .MobileNav {
+    &--container {
+      display: inline-block;
+      font-size: 24px;
+      height: 30px;
+      bottom: 3px;
+    }
+  }
+} 
+
+//SMALL TABLET
+@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+  .MobileNav {
+    &--container {
+      display: inline-block;
+      margin: auto 15px;
+      font-size: 22px;
+      height: 30px;
+      bottom: 3px;
+    }
+  }
+} 
+
+//Mobile
+@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+  .MobileNav {
+    &--container {
+      display: inline-block;
+      margin: auto 15px;
+      font-size: 18px;
+      height: 28px;
+      bottom: 2.5px;
+      padding-right: 4px;
     }
   }
 }
