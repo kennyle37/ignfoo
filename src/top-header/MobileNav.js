@@ -5,6 +5,7 @@ class MobileNav extends Component {
     value: 'Latest'
   }
 
+  //change the view of our app depending on our nav selection
   handleChange = (e) => {
     this.setState({
       value: e.target.value

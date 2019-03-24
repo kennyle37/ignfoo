@@ -14,28 +14,13 @@ $borderRadius: 3px;
 /*
 SCREEN SIZES
 */
+$oversizedDesktop: 2000px;
 $largeDesktop: 1440px;
-$largeDesktopCap: 1439px;
-
-$inBetweenLargeDesktop: 1438px;
-$inBetweenLargeDesktopCap: 1040px;
-
-$smallDesktop: 1024px;
-$smallDesktopCap: 1023px;
-
-$inBetweenSmallDesktop: 1040;
-$inBetweenSmallDesktopCap: 780px;
-
-$verticalTablet: 768px;
-$verticalTabletCap: 767px;
-
-$smallTablet: 600px;
-$smallTabletCap: 599px;
-
-$inBetweenSmallTablet: 598px;
-$inBetweenSmallTabletCap: 380px;
-
-$mobile: 250px;
+$smallDesktop: 960px;
+$defaultIpad: 768px;
+$TabletMin: 481px;
+$TabletMax: 1024px;
+$mobile: 480px;
 
 body {
   margin: 0;
@@ -50,49 +35,49 @@ body {
 }
 
 /* for sumo sized (mac) screens */
-@media only screen and (min-width: 2000px) {
+@media only screen and (min-width: $oversizedDesktop) {
   .container {
     margin: auto auto !important;
   }
 }
 
 /* styles for browsers larger than 1440px; */
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: $largeDesktop) {
   .container {
     margin: auto auto !important;
   }
 }
 
 /* styles for browsers larger than 960px; */
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $smallDesktop) {
   .container {
     margin: auto 20px;
   }
 }
 
 /* default iPad screens */
-@media only screen and (device-width: 768px) {
+@media only screen and (device-width: $defaultIpad) {
   .container {
     margin: auto 15px;
   }
 }
 
 /* styles for mobile browsers smaller than 480px; (iPhone) */
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: $mobile) {
   .container {
     margin: auto 12px;
   }
 }
 
 /* different techniques for iPad screening */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
 /* For portrait layouts only */
   .container {
     margin: auto 20px;
   }
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
 /* For landscape layouts only */
   .container {
     margin: auto 15px;
@@ -121,13 +106,8 @@ body {
   }
 }
 
-// /* for sumo sized (mac) screens */
-@media only screen and (min-width: 2000px) {
-
-}
-
 // /* styles for browsers larger than 1440px; */
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: $largeDesktop) {
   .TopHeader {
     &--container {
       border-bottom: 1.5px solid lightgray !important;
@@ -139,7 +119,7 @@ body {
 }
 
 /* styles for browsers larger than 960px; */
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $smallDesktop) {
   .TopHeader {
     &--container {
       border-bottom: 2px solid lightgray;
@@ -152,7 +132,7 @@ body {
 }
 
 /* default iPad screens */
-@media only screen and (device-width: 768px) {
+@media only screen and (device-width: $defaultIpad) {
   .TopHeader {
     &--container {
       border-bottom: 2px solid lightgray;
@@ -168,7 +148,7 @@ body {
 }
 
 /* styles for mobile browsers smaller than 480px; (iPhone) */
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: $mobile) {
   .TopHeader {
     &--title {
       font-size: 26px;
@@ -181,7 +161,7 @@ body {
 }
 
 /* different techniques for iPad screening */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
 /* For portrait layouts only */
   .TopHeader {
     &--title {
@@ -194,7 +174,7 @@ body {
   }
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
 /* For landscape layouts only */
   .TopHeader {
     &--container {
@@ -221,18 +201,10 @@ body {
 
 .SideNav {
   &--container {
-    // border: .5px solid lightblue;
     margin: 0px auto;
     padding-left: 0px;
   }
-  &--row {
-    // border: .5px solid lightgreen;
-  }
-  &--card-container {
-    // border-bottom: .5px solid red;
-  }
   &--card {
-    // border: .5px solid red;
     color: gray;
     cursor: pointer;
   }
@@ -260,21 +232,21 @@ li {
 }
 
 // /* for sumo sized (mac) screens */
-@media only screen and (min-width: 2000px) {
+@media only screen and (min-width: $oversizedDesktop) {
   .SideNav--container {
     display: inline !important;
   }
 }
 
 // /* styles for browsers larger than 1440px; */
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: $largeDesktop) {
   .SideNav--container {
     display: inline !important;
   }
 }
 
 /* styles for browsers larger than 960px; */
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $smallDesktop) {
   .SideNav--container {
     display: none;
   }
@@ -290,28 +262,28 @@ li {
 }
 
 /* default iPad screens */
-@media only screen and (device-width: 768px) {
+@media only screen and (device-width: $defaultIpad) {
   .SideNav--container {
     display: none;
   }
 }
 
 /* styles for mobile browsers smaller than 480px; (iPhone) */
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: $mobile) {
   .SideNav--container {
     display: none;
   }
 }
 
 /* different techniques for iPad screening */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
 /* For portrait layouts only */
   .SideNav--container {
     display: none;
   }
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
 /* For landscape layouts only */
   .SideNav--container {
     display: none;
@@ -328,22 +300,18 @@ li {
 
 .SideSection {
   &--container {
-    // border: .5px solid lightblue;
     padding: 0px;
   }
   &--row {
     margin: 0px !important;
-    // border: .5px solid lightgreen;
   }
   &--card-container {
-    // border: .5px solid yellow;
     border-bottom: .5px solid lightgray;
   }
   &--card-preview {
     padding-left: 0px;
     cursor: pointer;
     position: relative;
-    // margin: auto 0px auto 0px;
   }
   &--card-duration-container {
     background-color: $redBackground;
@@ -366,7 +334,6 @@ li {
     font-weight: $mediumBold;
     letter-spacing: .05em;
   }
-
   &--card-info {
     padding-left: 0px;
     padding-right: 0px;
@@ -383,9 +350,6 @@ li {
   &--post-comment {
     margin: 0px 5px 0 0;
     cursor: pointer;
-  }
-  &--post-comment-count {
-
   }
   &--post-title {
     color: black;
@@ -434,7 +398,7 @@ li {
 }
 
 // /* for sumo sized (mac) screens */
-@media only screen and (min-width: 2000px) {
+@media only screen and (min-width: $oversizedDesktop) {
   .SideSection {
     &--post-title {
       line-height: normal !important;
@@ -448,7 +412,7 @@ li {
 }
 
 // /* styles for browsers larger than 1440px; */
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: $largeDesktop) {
   .SideSection {
     &--post-title {
       line-height: normal !important;
@@ -462,7 +426,7 @@ li {
 }
 
 /* styles for browsers larger than 960px; */
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $smallDesktop) {
   .SideSection {
     &--post-title {
       font-size: 22px !important;
@@ -511,7 +475,7 @@ li {
 }
 
 /* default iPad screens */
-@media only screen and (device-width: 768px) {
+@media only screen and (device-width: $defaultIpad) {
   .SideSection {
     &--post-title {
       line-height: 1.90rem;
@@ -522,7 +486,7 @@ li {
 }
 
 /* styles for mobile browsers smaller than 480px; (iPhone) */
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: $mobile) {
   .SideSection {
     &--post-title {
       font-weight: $lightBold;
@@ -553,7 +517,7 @@ li {
     display: none;
   }
   /* styles for mobile browsers that's in our blind spot (430-480) */
-  @media only screen and (min-device-width: 430px) and (max-device-width: 480px) {
+  @media only screen and (min-device-width: 430px) and (max-device-width: $mobile) {
     .SideSection {
       &--card-duration-container {
         display: inline-block;
@@ -575,7 +539,7 @@ li {
 
 
 /* different techniques for iPad screening */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
 /* For portrait layouts only */
   .SideSection {
     &--post-title {
@@ -593,7 +557,7 @@ li {
     }
   }
   /* styles for tablet browsers that's in our blind spot */
-  @media only screen and (min-device-width: 768px) and (orientation:portrait) {
+  @media only screen and (min-device-width: $defaultIpad) and (orientation:portrait) {
     .SideSection {
       &--img {
         width: 100%;
@@ -633,7 +597,7 @@ li {
       }
     }
   }
-  @media only screen and (min-device-width: 481px) and (max-device-width: 521px) and (orientation:portrait) {
+  @media only screen and (min-device-width: $TabletMin) and (max-device-width: 521px) and (orientation:portrait) {
     .SideSection {
       &--card-duration-container {
         top: 85px;
@@ -643,7 +607,7 @@ li {
   }
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
 /* For landscape layouts only */
   .SideSection {
     &--post-title {
@@ -673,7 +637,7 @@ li {
     }
   }
   /* styles for tablet browsers that's in our blind spot */
-  @media only screen and (min-device-width: 768px) and (orientation:landscape) {
+  @media only screen and (min-device-width: $defaultIpad) and (orientation:landscape) {
     .SideSection {
       &--img {
         width: 100%;
@@ -736,18 +700,8 @@ li {
   }
 }
 
-//LARGE DESKTOP
-@media screen and (min-width: $largeDesktop) {
-
-} 
-
-// /* for sumo sized (mac) screens */
-@media only screen and (min-width: 2000px) {
-
-}
-
 // /* styles for browsers larger than 1440px; */
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: $largeDesktop) {
   .MobileNav {
     &--container {
       display: none !important;
@@ -756,7 +710,7 @@ li {
 }
 
 /* styles for browsers larger than 960px; */
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $smallDesktop) {
   .MobileNav {
     &--container {
       display: inline-block;
@@ -785,7 +739,7 @@ li {
 }
 
 /* default iPad screens */
-@media only screen and (device-width: 768px) {
+@media only screen and (device-width: $defaultIpad) {
   .MobileNav {
     &--container {
       display: inline-block;
@@ -797,7 +751,7 @@ li {
 }
 
 /* styles for mobile browsers smaller than 480px; (iPhone) */
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: $mobile) {
   .MobileNav {
     &--container {
       display: inline-block;
@@ -811,7 +765,7 @@ li {
 }
 
 /* different techniques for iPad screening */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
 /* For portrait layouts only */
   .MobileNav {
     &--container {
@@ -823,7 +777,7 @@ li {
   }
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
 /* For landscape layouts only */
   .MobileNav {
     &--container {

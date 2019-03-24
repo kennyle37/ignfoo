@@ -22,6 +22,7 @@ class App extends Component {
     })
   }
 
+  //display view for our mobile screen
   handleMobileCurrentView = (view) => {
     this.setState({
       view: view  
