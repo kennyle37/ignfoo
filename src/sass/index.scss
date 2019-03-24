@@ -292,8 +292,6 @@ li {
     padding-top: 10px;
     padding-bottom: 10px;
     position: absolute;
-    top: 133px;
-    left: 8px;
   }
   &--card-icon {
     color: $redBackground;
@@ -329,6 +327,10 @@ li {
     font-size: 18px;
     font-weight: $mediumBold;
     cursor: pointer;
+  }
+  &--post-title:hover{
+    color: #1E90FF;
+    text-decoration: underline;
   }
   &--img {
     width: 100%;
@@ -368,7 +370,12 @@ li {
 
 //LARGE DESKTOP
 @media screen and (min-width: $largeDesktop) {
-
+  .SideSection {
+    &--post-title {
+      font-size: 22px;
+      font-weight: $mediumBold;
+    }
+  }
 } 
 
 //SMALL DESKTOP
@@ -385,6 +392,7 @@ li {
       color: black;
       font-size: 22px;
       line-height: 1.90rem;
+      font-weight: $mediumBold;
     }
     &--card-duration-container {
       background-color: #bf1313;
