@@ -14,19 +14,13 @@ $borderRadius: 3px;
 /*
 SCREEN SIZES
 */
+$oversizedDesktop: 2000px;
 $largeDesktop: 1440px;
-$largeDesktopCap: 1439px;
-
-$smallDesktop: 1024px;
-$smallDesktopCap: 1023px;
-
-$verticalTablet: 768px;
-$verticalTabletCap: 767px;
-
-$smallTablet: 600px;
-$smallTabletCap: 599px;
-
-$mobile: 250px;
+$smallDesktop: 960px;
+$defaultIpad: 768px;
+$TabletMin: 481px;
+$TabletMax: 1024px;
+$mobile: 480px;
 
 body {
   margin: 0;
@@ -40,38 +34,55 @@ body {
   margin: 0px auto;
 }
 
-//LARGE DESKTOP
-@media screen and (min-width: $largeDesktop) {
-
-} 
-
-//SMALL DESKTOP
-@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+/* for sumo sized (mac) screens */
+@media only screen and (min-width: $oversizedDesktop) {
   .container {
-    margin: auto 150px;
+    margin: auto auto !important;
   }
-} 
+}
 
-//VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+/* styles for browsers larger than 1440px; */
+@media only screen and (min-width: $largeDesktop) {
   .container {
-    margin: auto 25px;
+    margin: auto auto !important;
   }
-} 
+}
 
-//SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+/* styles for browsers larger than 960px; */
+@media only screen and (min-width: $smallDesktop) {
   .container {
-    margin: auto 30px;
+    margin: auto 20px;
   }
-} 
+}
 
-//MOBILE
-@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+/* default iPad screens */
+@media only screen and (device-width: $defaultIpad) {
+  .container {
+    margin: auto 15px;
+  }
+}
+
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+@media only screen and (max-device-width: $mobile) {
   .container {
     margin: auto 12px;
   }
-} 
+}
+
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
+/* For portrait layouts only */
+  .container {
+    margin: auto 20px;
+  }
+}
+
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
+/* For landscape layouts only */
+  .container {
+    margin: auto 15px;
+  }
+}
 
 //  _                         _                        _              
 // ( )_                      ( )                      ( )             
@@ -95,13 +106,20 @@ body {
   }
 }
 
-//LARGE DESKTOP
-@media screen and (min-width: $largeDesktop) {
+// /* styles for browsers larger than 1440px; */
+@media only screen and (min-width: $largeDesktop) {
+  .TopHeader {
+    &--container {
+      border-bottom: 1.5px solid lightgray !important;
+    }
+    &--title-mobile {
+      display: inline !important;
+    }
+  }
+}
 
-} 
-
-//SMALL DESKTOP
-@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+/* styles for browsers larger than 960px; */
+@media only screen and (min-width: $smallDesktop) {
   .TopHeader {
     &--container {
       border-bottom: 2px solid lightgray;
@@ -111,10 +129,10 @@ body {
       padding: auto;
     }
   }
-} 
+}
 
-//VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+/* default iPad screens */
+@media only screen and (device-width: $defaultIpad) {
   .TopHeader {
     &--container {
       border-bottom: 2px solid lightgray;
@@ -127,23 +145,10 @@ body {
       padding: auto;
     }
   }
-} 
+}
 
-//SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
-  .TopHeader {
-    &--title {
-      font-size: 32px;
-    }
-    &--title-mobile {
-      display: none;
-      padding: auto;
-    }
-  }
-} 
-
-//MOBILE
-@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+@media only screen and (max-device-width: $mobile) {
   .TopHeader {
     &--title {
       font-size: 26px;
@@ -153,7 +158,38 @@ body {
       padding: auto;
     }
   }
-} 
+}
+
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
+/* For portrait layouts only */
+  .TopHeader {
+    &--title {
+      font-size: 42px;
+    }
+    &--title-mobile {
+      display: none;
+      padding: auto;
+    }
+  }
+}
+
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
+/* For landscape layouts only */
+  .TopHeader {
+    &--container {
+      border-bottom: 2px solid lightgray;
+    }
+    &--title {
+      font-size: 42px;
+    }
+    &--title-mobile {
+      display: none;
+      padding: auto;
+    }
+  }
+}
+
 
 // _   _  _____  _   _ 
 // ( ) ( )(  _  )( ) ( )
@@ -165,18 +201,10 @@ body {
 
 .SideNav {
   &--container {
-    // border: .5px solid lightblue;
     margin: 0px auto;
     padding-left: 0px;
   }
-  &--row {
-    // border: .5px solid lightgreen;
-  }
-  &--card-container {
-    // border-bottom: .5px solid red;
-  }
   &--card {
-    // border: .5px solid red;
     color: gray;
     cursor: pointer;
   }
@@ -203,34 +231,60 @@ li {
   list-style-type: none;
 }
 
-//LARGE DESKTOP
-@media screen and (min-width: $largeDesktop) {
+// /* for sumo sized (mac) screens */
+@media only screen and (min-width: $oversizedDesktop) {
+  .SideNav--container {
+    display: inline !important;
+  }
+}
 
-} 
+// /* styles for browsers larger than 1440px; */
+@media only screen and (min-width: $largeDesktop) {
+  .SideNav--container {
+    display: inline !important;
+  }
+}
 
-//SMALL DESKTOP
-@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+/* styles for browsers larger than 960px; */
+@media only screen and (min-width: $smallDesktop) {
   .SideNav--container {
     display: none;
   }
-} 
+  //blindspot
+  @media screen and (min-device-width: 1040px) and (max-device-width: 1439px) {
+    .SideNav {
+      &--container {
+        display: inline !important;
+        margin: 0px;
+      }
+    }
+  }
+}
 
-//VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+/* default iPad screens */
+@media only screen and (device-width: $defaultIpad) {
   .SideNav--container {
     display: none;
   }
-} 
+}
 
-//SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+@media only screen and (max-device-width: $mobile) {
   .SideNav--container {
     display: none;
   }
-} 
+}
 
-//Mobile
-@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
+/* For portrait layouts only */
+  .SideNav--container {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
+/* For landscape layouts only */
   .SideNav--container {
     display: none;
   }
@@ -246,22 +300,18 @@ li {
 
 .SideSection {
   &--container {
-    // border: .5px solid lightblue;
     padding: 0px;
   }
   &--row {
     margin: 0px !important;
-    // border: .5px solid lightgreen;
   }
   &--card-container {
-    // border: .5px solid yellow;
     border-bottom: .5px solid lightgray;
   }
   &--card-preview {
     padding-left: 0px;
     cursor: pointer;
     position: relative;
-    // margin: auto 0px auto 0px;
   }
   &--card-duration-container {
     background-color: $redBackground;
@@ -275,8 +325,6 @@ li {
     padding-top: 10px;
     padding-bottom: 10px;
     position: absolute;
-    top: 133px;
-    left: 8px;
   }
   &--card-icon {
     color: $redBackground;
@@ -286,9 +334,7 @@ li {
     font-weight: $mediumBold;
     letter-spacing: .05em;
   }
-
   &--card-info {
-    // border: .5px solid red;
     padding-left: 0px;
     padding-right: 0px;
   }
@@ -305,14 +351,15 @@ li {
     margin: 0px 5px 0 0;
     cursor: pointer;
   }
-  &--post-comment-count {
-
-  }
   &--post-title {
     color: black;
     font-size: 18px;
     font-weight: $mediumBold;
     cursor: pointer;
+  }
+  &--post-title:hover{
+    color: #1E90FF;
+    text-decoration: underline;
   }
   &--img {
     width: 100%;
@@ -350,102 +397,103 @@ li {
   display: none;
 }
 
-//LARGE DESKTOP
-@media screen and (min-width: $largeDesktop) {
-
-} 
-
-//SMALL DESKTOP
-@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+// /* for sumo sized (mac) screens */
+@media only screen and (min-width: $oversizedDesktop) {
   .SideSection {
-    &--img {
-      width: 100%;
-      height: 100%;
-      max-width: 330px;
-      max-height: 200px;
-      border-radius: 3px;
-    }
     &--post-title {
-      color: black;
-      font-size: 22px;
+      line-height: normal !important;
+      font-weight: $mediumBold !important;
+    }
+    &--card-duration-container {
+      top: 180px !important;
+      left: 15px;
+    }
+  }
+}
+
+// /* styles for browsers larger than 1440px; */
+@media only screen and (min-width: $largeDesktop) {
+  .SideSection {
+    &--post-title {
+      line-height: normal !important;
+      font-weight: $mediumBold !important;
+    }
+    &--card-duration-container {
+      top: 130px !important;
+      left: 15px;
+    }
+  }
+}
+
+/* styles for browsers larger than 960px; */
+@media only screen and (min-width: $smallDesktop) {
+  .SideSection {
+    &--post-title {
+      font-size: 22px !important;
       line-height: 1.90rem;
       font-weight: $lightBold;
     }
-    &--card-duration-container {
-      background-color: #bf1313;
-      display: inline-block;
+    &--img {
       width: 100%;
-      max-width: 85px;
+      height: 100%;
+      max-width: 400px;
+      max-height: 250px;
       border-radius: 3px;
-      color: #fff;
-      font-weight: 600;
-      text-align: center;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      position: absolute;
-      top: 158px;
-      left: 8px;
+    }
+    &--card-duration-container {
+      top: 180px;
+      left: 15px;
     }
   }
   .hidden {
     display: none;
   }
-} 
-
-//VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
-  .SideSection {
-    &--img {
-      width: 100%;
-      height: 100%;
-      max-width: 340px;
-      max-height: 200px;
-      border-radius: 3px;
+  @media screen and (min-device-width: 1040px) and (max-device-width: 1155px) {
+    .SideSection {
+      &--card-duration-container {
+        top: 110px;
+        left: 15px;
+      }
     }
+  }
+  @media screen and (min-device-width: 1156px) and (max-device-width: 1439px) {
+    .SideSection {
+      &--card-duration-container {
+        top: 125px;
+        left: 15px;
+      }
+    }
+  }
+  //resize for blindspot
+  @media screen and (min-device-width: 1040px) and (max-device-width: 1439px) {
+    .SideSection {
+      &--filler {
+        display: none;
+      }
+    }
+  }
+}
+
+/* default iPad screens */
+@media only screen and (device-width: $defaultIpad) {
+  .SideSection {
     &--post-title {
-      color: black;
-      font-size: 22px;
       line-height: 1.90rem;
       font-weight: $lightBold;
-    }
-    &--card-duration-container {
-      top: 160px;
-      left: 12px;
+      font-size: 20px !important;
     }
   }
-} 
+}
 
-//SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+@media only screen and (max-device-width: $mobile) {
   .SideSection {
     &--post-title {
-      color: black;
-      font-size: 18px;
-      line-height: 1.5rem;
       font-weight: $lightBold;
-    }
-    &--card-duration-container {
-      top: 118px;
-      left: 6px;
-    }
-  }
-} 
-
-//MOBILE
-@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
-  .SideSection {
-    &--img {
-      width: 100%;
-      height: 100%;
-      max-width: 160px;
-      max-height: 90px;
-      border-radius: 3px;
-    }
-    &--post-title {
-      color: black;
       font-size: 15px;
-      line-height: 1.15rem;
-      font-weight: $lightBold;
+    }
+    &--card-duration {
+      display: none;
     }
     &--card-duration-container {
       display: inline-block;
@@ -458,9 +506,6 @@ li {
       top: 60px;
       left: 6px;
     }
-    &--card-duration {
-      display: none;
-    }
   }
   .circle {
     display: inline-block;
@@ -471,7 +516,169 @@ li {
   .hidden {
     display: none;
   }
+  /* styles for mobile browsers that's in our blind spot (430-480) */
+  @media only screen and (min-device-width: 430px) and (max-device-width: $mobile) {
+    .SideSection {
+      &--card-duration-container {
+        display: inline-block;
+        width: 80%;
+        height: 80%;
+        max-height: 18px;
+        max-width: 40px;
+        border-radius: 4px;
+        position: absolute;
+        top: 85px481;
+        left: 6px;
+      }
+    }
+    .hidden {
+      display: none;
+    }
+  }
 }
+
+
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
+/* For portrait layouts only */
+  .SideSection {
+    &--post-title {
+      font-weight: $lightBold;
+      font-size: 20px !important;
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 885px) and (orientation:portrait) {
+    .SideSection {
+      &--card-duration-container {
+        top: 200px !important;
+        left: 12px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: $defaultIpad) and (orientation:portrait) {
+    .SideSection {
+      &--img {
+        width: 100%;
+        height: 100%;
+        max-width: 450px;
+        max-height: 250px;
+        border-radius: 3px;
+      }
+      &--card-duration-container {
+        top: 170px;
+        left: 12px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 581px) and (max-device-width: 767px) and (orientation:portrait) {
+    .SideSection {
+      &--img {
+        width: 100%;
+        height: 100%;
+        max-width: 325px;
+        max-height: 200px;
+        border-radius: 3px;
+      }
+      &--card-duration-container {
+        top: 120px;
+        left: 8px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 522px) and (max-device-width: 580px) and (orientation:portrait) {
+    .SideSection {
+      &--card-duration-container {
+        top: 105px;
+        left: 6px;
+      }
+    }
+  }
+  @media only screen and (min-device-width: $TabletMin) and (max-device-width: 521px) and (orientation:portrait) {
+    .SideSection {
+      &--card-duration-container {
+        top: 85px;
+        left: 6px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
+/* For landscape layouts only */
+  .SideSection {
+    &--post-title {
+      line-height: 1.90rem;
+      font-weight: $lightBold;
+      font-size: 20px;
+    }
+    &--img {
+      width: 100%;
+      height: 100%;
+      max-width: 450px;
+      max-height: 300px;
+      border-radius: 3px;
+    }
+    &--card-duration-container {
+      top: 220px;
+      left: 12px;
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 885px) and (orientation:landscape) {
+    .SideSection {
+      &--card-duration-container {
+        top: 200px !important;
+        left: 12px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: $defaultIpad) and (orientation:landscape) {
+    .SideSection {
+      &--img {
+        width: 100%;
+        height: 100%;
+        max-width: 450px;
+        max-height: 250px;
+        border-radius: 3px;
+      }
+      &--card-duration-container {
+        top: 170px;
+        left: 12px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 581px) and (max-device-width: 767px) and (orientation:landscape) {
+    .SideSection {
+      &--img {
+        width: 100%;
+        height: 100%;
+        max-width: 325px;
+        max-height: 200px;
+        border-radius: 3px;
+      }
+      &--card-duration-container {
+        top: 120px;
+        left: 8px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 522px) and (max-device-width: 580px) and (orientation:landscape) {
+    .SideSection {
+      &--card-duration-container {
+        top: 105px;
+        left: 6px;
+      }
+    }
+  }
+}
+
 
 // ______   ___   ____  ____    ____  __ __ 
 // |      | /   \ |    \|    \  /    ||  |  |
@@ -493,22 +700,46 @@ li {
   }
 }
 
-//LARGE DESKTOP
-@media screen and (min-width: $largeDesktop) {
+// /* styles for browsers larger than 1440px; */
+@media only screen and (min-width: $largeDesktop) {
+  .MobileNav {
+    &--container {
+      display: none !important;
+    }
+  }
+}
 
-} 
-
-//SMALL DESKTOP
-@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
+/* styles for browsers larger than 960px; */
+@media only screen and (min-width: $smallDesktop) {
   .MobileNav {
     &--container {
       display: inline-block;
     }
   }
-} 
+  .TopHeader {
+    &--title-mobile {
+      display: none;
+      padding: auto;
+    }
+  }
+  //blindspot
+  @media screen and (min-device-width: 1040px) and (max-device-width: 1439px) {
+    .MobileNav {
+      &--container {
+        display: none;
+      }
+    }
+    .TopHeader {
+      &--title-mobile {
+        display: inline;
+        padding: auto;
+      }
+    }
+  }
+}
 
-//VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
+/* default iPad screens */
+@media only screen and (device-width: $defaultIpad) {
   .MobileNav {
     &--container {
       display: inline-block;
@@ -517,23 +748,10 @@ li {
       bottom: 3px;
     }
   }
-} 
+}
 
-//SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
-  .MobileNav {
-    &--container {
-      display: inline-block;
-      margin: auto 15px;
-      font-size: 22px;
-      height: 30px;
-      bottom: 3px;
-    }
-  }
-} 
-
-//Mobile
-@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+@media only screen and (max-device-width: $mobile) {
   .MobileNav {
     &--container {
       display: inline-block;
@@ -542,6 +760,32 @@ li {
       height: 28px;
       bottom: 2.5px;
       padding-right: 4px;
+    }
+  }
+}
+
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
+/* For portrait layouts only */
+  .MobileNav {
+    &--container {
+      display: inline-block;
+      font-size: 24px;
+      height: 30px;
+      bottom: 3px;
+    }
+  }
+}
+
+@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
+/* For landscape layouts only */
+  .MobileNav {
+    &--container {
+      display: inline-block;
+      margin: auto 15px;
+      font-size: 22px;
+      height: 30px;
+      bottom: 3px;
     }
   }
 }

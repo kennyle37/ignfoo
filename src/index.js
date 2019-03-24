@@ -22,12 +22,13 @@ class App extends Component {
     })
   }
 
+  //display view for our mobile screen
   handleMobileCurrentView = (view) => {
     this.setState({
       view: view  
     })
   }
-
+  
   render() {
     const view = this.state.view.toLowerCase();
 
@@ -48,7 +49,7 @@ class App extends Component {
             <SideSectionContainer view={view} />
           </div>
           
-          <div className="col-md-3 hide-sm-only hide-xs-only" />
+          <div className="col-md-3 hide-sm-only hide-xs-only SideSection--filler" />
         </div>
       </div>
     )
