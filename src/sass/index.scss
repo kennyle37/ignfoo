@@ -297,16 +297,16 @@ li {
 /* different techniques for iPad screening */
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
 /* For portrait layouts only */
-.SideNav--container {
-  display: none;
-}
+  .SideNav--container {
+    display: none;
+  }
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
 /* For landscape layouts only */
-.SideNav--container {
-  display: none;
-}
+  .SideNav--container {
+    display: none;
+  }
 }
 
 // ___    ___    ___   _____  _  _____  _   _ 
@@ -426,12 +426,12 @@ li {
 
 //LARGE DESKTOP
 @media screen and (min-width: $largeDesktop) {
-  .SideSection {
-    &--post-title {
-      font-size: 22px;
-      font-weight: $mediumBold;
-    }
-  }
+  // .SideSection {
+  //   &--post-title {
+  //     font-size: 22px;
+  //     font-weight: $mediumBold;
+  //   }
+  // }
 } 
 
 //RANDOM BREAKPOINT
@@ -447,12 +447,12 @@ li {
       max-height: 200px;
       border-radius: 3px;
     }
-    &--post-title {
-      color: black;
-      font-size: 22px;
-      line-height: 1.90rem;
-      font-weight: $mediumBold;
-    }
+    // &--post-title {
+    //   color: black;
+    //   font-size: 22px;
+    //   line-height: 1.90rem;
+    //   font-weight: $mediumBold;
+    // }
     &--card-duration-container {
       background-color: #bf1313;
       display: inline-block;
@@ -484,12 +484,12 @@ li {
       max-height: 200px;
       border-radius: 3px;
     }
-    &--post-title {
-      color: black;
-      font-size: 22px;
-      line-height: 1.90rem;
-      font-weight: $lightBold;
-    }
+    // &--post-title {
+    //   color: black;
+    //   font-size: 22px;
+    //   line-height: 1.90rem;
+    //   font-weight: $lightBold;
+    // }
     &--card-duration-container {
       top: 160px;
       left: 12px;
@@ -523,9 +523,9 @@ li {
       max-height: 300px;
       border-radius: 3px;
     }
-    &--post-title {
-      font-weight: $lightBold;
-    }
+    // &--post-title {
+    //   font-weight: $lightBold;
+    // }
   }
 } 
 
@@ -539,12 +539,12 @@ li {
       max-height: 85px;
       border-radius: 3px;
     }
-    &--post-title {
-      color: black;
-      font-size: 15px;
-      line-height: 1.15rem;
-      font-weight: $lightBold;
-    }
+    // &--post-title {
+    //   color: black;
+    //   font-size: 15px;
+    //   line-height: 1.15rem;
+    //   font-weight: $lightBold;
+    // }
     &--card-duration-container {
       display: inline-block;
       width: 100%;
@@ -570,6 +570,82 @@ li {
     display: none;
   }
 }
+
+// /* for sumo sized (mac) screens */
+@media only screen and (min-width: 2000px) {
+  .SideSection {
+    &--post-title {
+      line-height: normal !important;
+      font-weight: $mediumBold !important;
+    }
+  }
+}
+
+// /* styles for browsers larger than 1440px; */
+@media only screen and (min-width: 1440px) {
+  .SideSection {
+    &--post-title {
+      line-height: normal !important;
+      font-weight: $mediumBold !important;
+    }
+  }
+}
+
+/* styles for browsers larger than 960px; */
+@media only screen and (min-width: 960px) {
+  .SideSection {
+    &--post-title {
+      font-size: 22px !important;
+      line-height: 1.90rem;
+      font-weight: $lightBold;
+    }
+  }
+}
+
+/* default iPad screens */
+@media only screen and (device-width: 768px) {
+  .SideSection {
+    &--post-title {
+      line-height: 1.90rem;
+      font-weight: $lightBold;
+      font-size: 18px;
+    }
+  }
+}
+
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+@media only screen and (max-device-width: 480px) {
+  .SideSection {
+    &--post-title {
+      font-weight: $lightBold;
+      font-size: 15px;
+    }
+  }
+}
+
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+/* For portrait layouts only */
+  .SideSection {
+    &--post-title {
+      // line-height: 1.90rem;
+      font-weight: $lightBold;
+      font-size: 18px;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+/* For landscape layouts only */
+  .SideSection {
+    &--post-title {
+      line-height: 1.90rem;
+      font-weight: $lightBold;
+      font-size: 18px;
+    }
+  }
+}
+
 
 // ______   ___   ____  ____    ____  __ __ 
 // |      | /   \ |    \|    \  /    ||  |  |
