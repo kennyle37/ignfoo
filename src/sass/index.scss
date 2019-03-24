@@ -278,6 +278,15 @@ li {
   .SideNav--container {
     display: none;
   }
+  //blindspot
+  @media screen and (min-device-width: 1040px) and (max-device-width: 1439px) {
+    .SideNav {
+      &--container {
+        display: inline !important;
+        margin: 0px;
+      }
+    }
+  }
 }
 
 /* default iPad screens */
@@ -757,6 +766,20 @@ li {
     &--title-mobile {
       display: none;
       padding: auto;
+    }
+  }
+  //blindspot
+  @media screen and (min-device-width: 1040px) and (max-device-width: 1439px) {
+    .MobileNav {
+      &--container {
+        display: none;
+      }
+    }
+    .TopHeader {
+      &--title-mobile {
+        display: inline;
+        padding: auto;
+      }
     }
   }
 }
