@@ -58,7 +58,9 @@ const Preview = ({ preview, duration }) => {
         </span>
         <span className="SideSection--card-duration">{time}</span>
       </span>
-      <img className="SideSection--img" src={preview} alt="example" />
+      <div className="SideSection--img-brightness">
+        <img className="SideSection--img" src={preview} alt="example" />
+      </div>
     </div>
   )
 }

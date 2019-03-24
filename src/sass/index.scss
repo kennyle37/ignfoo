@@ -361,12 +361,19 @@ li {
     color: #1E90FF;
     text-decoration: underline;
   }
+  &--img-brightness {
+    background-color: #F0F0F0;
+    display: inline-block;
+  }
   &--img {
     width: 100%;
     height: 100%;
     max-width: 285px;
     max-height: 172px;
     border-radius: $borderRadius;
+  }
+  &--img:hover {
+    opacity: .35;
   }
   &--msg-logo {
     width: 15px;
