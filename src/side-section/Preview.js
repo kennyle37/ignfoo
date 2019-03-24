@@ -1,5 +1,6 @@
 import React from 'react';
 
+//fetch the time and convert it into display format
 function timeConverter(duration) {
   let time = '';
   let hours = Math.floor(duration / 3600);
@@ -35,6 +36,7 @@ function timeConverter(duration) {
   return time;
 }
 
+//display post's preview panel and the time
 const Preview = ({ preview, duration }) => {
   let visible = duration ? 'SideSection--card-duration-container' : 'SideSection--card-duration-container hidden';
   let time;

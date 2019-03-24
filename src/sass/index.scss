@@ -17,14 +17,23 @@ SCREEN SIZES
 $largeDesktop: 1440px;
 $largeDesktopCap: 1439px;
 
+$inBetweenLargeDesktop: 1438px;
+$inBetweenLargeDesktopCap: 1040px;
+
 $smallDesktop: 1024px;
 $smallDesktopCap: 1023px;
+
+$inBetweenSmallDesktop: 1040;
+$inBetweenSmallDesktopCap: 780px;
 
 $verticalTablet: 768px;
 $verticalTabletCap: 767px;
 
 $smallTablet: 600px;
 $smallTabletCap: 599px;
+
+$inBetweenSmallTablet: 598px;
+$inBetweenSmallTabletCap: 380px;
 
 $mobile: 250px;
 
@@ -64,6 +73,11 @@ body {
   .container {
     margin: auto 30px;
   }
+} 
+
+//IN BETWEEN SMALL TABLET
+@media screen and (min-width: $inBetweenSmallTabletCap) and (max-width: $inBetweenSmallTablet) {
+
 } 
 
 //MOBILE
@@ -369,7 +383,6 @@ li {
       color: black;
       font-size: 22px;
       line-height: 1.90rem;
-      font-weight: $lightBold;
     }
     &--card-duration-container {
       background-color: #bf1313;
@@ -431,14 +444,30 @@ li {
   }
 } 
 
+// IN BETWEEN SMALL TABLET
+@media screen and (min-width: $inBetweenSmallTabletCap) {
+  .SideSection {
+    &--img {
+      width: 100%;
+      height: 100%;
+      max-width: 400px;
+      max-height: 300px;
+      border-radius: 3px;
+    }
+    &--post-title {
+      font-weight: $lightBold;
+    }
+  }
+} 
+
 //MOBILE
-@media screen and (min-width: $mobile) and (max-width: $smallTabletCap){
+@media screen and (min-width: $mobile) and (max-width: $inBetweenSmallTabletCap){
   .SideSection {
     &--img {
       width: 100%;
       height: 100%;
       max-width: 160px;
-      max-height: 90px;
+      max-height: 85px;
       border-radius: 3px;
     }
     &--post-title {
