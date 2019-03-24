@@ -491,6 +491,14 @@ li {
       }
     }
   }
+  //resize for blindspot
+  @media screen and (min-device-width: 1040px) and (max-device-width: 1439px) {
+    .SideSection {
+      &--filler {
+        display: none;
+      }
+    }
+  }
 }
 
 /* default iPad screens */
@@ -549,6 +557,9 @@ li {
         top: 85px481;
         left: 6px;
       }
+    }
+    .hidden {
+      display: none;
     }
   }
 }

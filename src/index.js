@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import './sass/index.scss';
-import './sass/preview.scss';
 
 import TopHeaderContainer from './top-header/TopHeaderContainer';
 import SideNavDisplayContainer from './side-nav/SideNavDisplayContainer';
@@ -28,7 +27,7 @@ class App extends Component {
       view: view  
     })
   }
-
+  
   render() {
     const view = this.state.view.toLowerCase();
 
