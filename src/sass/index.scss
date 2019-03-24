@@ -424,101 +424,16 @@ li {
   display: none;
 }
 
-//SMALL DESKTOP
-@media screen and (min-width: $smallDesktop) and (max-width: $largeDesktopCap) {
-  .SideSection {
-    &--img {
-      width: 100%;
-      height: 100%;
-      max-width: 330px;
-      max-height: 200px;
-      border-radius: 3px;
-    }
-    &--card-duration-container {
-      background-color: #bf1313;
-      display: inline-block;
-      width: 100%;
-      max-width: 85px;
-      border-radius: 3px;
-      color: #fff;
-      font-weight: 600;
-      text-align: center;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      position: absolute;
-      top: 158px;
-      left: 8px;
-    }
-  }
-  .hidden {
-    display: none;
-  }
-} 
-
-//VERTICAL TABLET
-@media screen and (min-width: $verticalTablet) and (max-width: $smallDesktopCap) {
-  .SideSection {
-    &--img {
-      width: 100%;
-      height: 100%;
-      max-width: 450px;
-      max-height: 200px;
-      border-radius: 3px;
-    }
-    &--card-duration-container {
-      top: 160px;
-      left: 12px;
-    }
-  }
-} 
-
-//SMALL TABLET
-@media screen and (min-width: $smallTablet) and (max-width: $verticalTabletCap) {
-  .SideSection {
-    &--post-title {
-      color: black;
-      font-size: 18px;
-      line-height: 1.5rem;
-      font-weight: $lightBold;
-    }
-    &--card-duration-container {
-      top: 118px;
-      left: 6px;
-    }
-  }
-} 
-
-// // IN BETWEEN SMALL TABLET
-// @media screen and (min-width: $inBetweenSmallTabletCap) {
-//   .SideSection {
-//     &--img {
-//       width: 100%;
-//       height: 100%;
-//       max-width: 425px;
-//       max-height: 300px;
-//       border-radius: 3px;
-//     }
-//   }
-// } 
-
-//MOBILE
-// @media screen and (min-width: $mobile) and (max-width: $inBetweenSmallTabletCap){
-  // .SideSection {
-  //   &--img {
-  //     width: 100%;
-  //     height: 100%;
-  //     max-width: 160px;
-  //     max-height: 85px;
-  //     border-radius: 3px;
-  //   }
-// }
-
 // /* for sumo sized (mac) screens */
 @media only screen and (min-width: 2000px) {
   .SideSection {
     &--post-title {
       line-height: normal !important;
       font-weight: $mediumBold !important;
+    }
+    &--card-duration-container {
+      top: 180px !important;
+      left: 15px;
     }
   }
 }
@@ -530,6 +445,10 @@ li {
       line-height: normal !important;
       font-weight: $mediumBold !important;
     }
+    &--card-duration-container {
+      top: 130px !important;
+      left: 15px;
+    }
   }
 }
 
@@ -540,6 +459,36 @@ li {
       font-size: 22px !important;
       line-height: 1.90rem;
       font-weight: $lightBold;
+    }
+    &--img {
+      width: 100%;
+      height: 100%;
+      max-width: 400px;
+      max-height: 250px;
+      border-radius: 3px;
+    }
+    &--card-duration-container {
+      top: 180px;
+      left: 15px;
+    }
+  }
+  .hidden {
+    display: none;
+  }
+  @media screen and (min-device-width: 1040px) and (max-device-width: 1155px) {
+    .SideSection {
+      &--card-duration-container {
+        top: 110px;
+        left: 15px;
+      }
+    }
+  }
+  @media screen and (min-device-width: 1156px) and (max-device-width: 1439px) {
+    .SideSection {
+      &--card-duration-container {
+        top: 125px;
+        left: 15px;
+      }
     }
   }
 }
@@ -597,7 +546,7 @@ li {
         max-width: 40px;
         border-radius: 4px;
         position: absolute;
-        top: 85px;
+        top: 85px481;
         left: 6px;
       }
     }
@@ -613,9 +562,46 @@ li {
       font-weight: $lightBold;
       font-size: 20px !important;
     }
-    &--card-duration-container {
-      top: 90px;
-      left: 6px;
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 885px) and (orientation:portrait) {
+    .SideSection {
+      &--card-duration-container {
+        top: 200px !important;
+        left: 12px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 768px) and (orientation:portrait) {
+    .SideSection {
+      &--img {
+        width: 100%;
+        height: 100%;
+        max-width: 450px;
+        max-height: 250px;
+        border-radius: 3px;
+      }
+      &--card-duration-container {
+        top: 170px;
+        left: 12px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 581px) and (max-device-width: 767px) and (orientation:portrait) {
+    .SideSection {
+      &--img {
+        width: 100%;
+        height: 100%;
+        max-width: 325px;
+        max-height: 200px;
+        border-radius: 3px;
+      }
+      &--card-duration-container {
+        top: 120px;
+        left: 8px;
+      }
     }
   }
   /* styles for tablet browsers that's in our blind spot */
@@ -627,12 +613,11 @@ li {
       }
     }
   }
-  /* styles for tablet browsers that's in our blind spot */
-  @media only screen and (min-device-width: 581px) and (max-device-width: 768px) and (orientation:portrait) {
+  @media only screen and (min-device-width: 481px) and (max-device-width: 521px) and (orientation:portrait) {
     .SideSection {
       &--card-duration-container {
-        top: 120px;
-        left: 8px;
+        top: 85px;
+        left: 6px;
       }
     }
   }
@@ -658,6 +643,65 @@ li {
       left: 12px;
     }
   }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 885px) and (orientation:landscape) {
+    .SideSection {
+      &--card-duration-container {
+        top: 200px !important;
+        left: 12px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 768px) and (orientation:landscape) {
+    .SideSection {
+      &--img {
+        width: 100%;
+        height: 100%;
+        max-width: 450px;
+        max-height: 250px;
+        border-radius: 3px;
+      }
+      &--card-duration-container {
+        top: 170px;
+        left: 12px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 581px) and (max-device-width: 767px) and (orientation:landscape) {
+    .SideSection {
+      &--img {
+        width: 100%;
+        height: 100%;
+        max-width: 325px;
+        max-height: 200px;
+        border-radius: 3px;
+      }
+      &--card-duration-container {
+        top: 120px;
+        left: 8px;
+      }
+    }
+  }
+  /* styles for tablet browsers that's in our blind spot */
+  @media only screen and (min-device-width: 522px) and (max-device-width: 580px) and (orientation:landscape) {
+    .SideSection {
+      &--card-duration-container {
+        top: 105px;
+        left: 6px;
+      }
+    }
+  }
+  // /* styles for tablet browsers that's in our blind spot */
+  // @media only screen and (min-device-width: 481px) and (max-device-width: 522px) and (orientation:landscape) {
+  //   .SideSection {
+  //     &--card-duration-container {
+  //       top: 100px;
+  //       left: 6px;
+  //     }
+  //   }
+  // }
 }
 
 
