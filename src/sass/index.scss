@@ -368,6 +368,13 @@ li {
     max-height: 172px;
     border-radius: $borderRadius;
   }
+  &--img-brightness {
+    background-color: #F0F0F0;
+    display: inline;
+  }
+  &--img:hover {
+    opacity: .3;
+  }
   &--msg-logo {
     width: 15px;
     height: 15px;
