@@ -1,5 +1,5 @@
 ## How To Run:
-In the project directory, you can run:
+Download from the Master branch and run the following scripts:
 
 ### `npm install`
 For first run, this will download dependencies
