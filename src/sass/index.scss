@@ -56,28 +56,28 @@ body {
 }
 
 /* default iPad screens */
-@media only screen and (device-width: $defaultIpad) {
+@media only screen and (min-width: $defaultIpad) {
   .container {
     margin: auto 15px;
   }
 }
 
 /* styles for mobile browsers smaller than 480px; (iPhone) */
-@media only screen and (max-device-width: $mobile) {
+@media only screen and (max-width: $mobile) {
   .container {
     margin: auto 12px;
   }
 }
 
 /* different techniques for iPad screening */
-@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
+@media only screen and (min-width: $TabletMin) and (max-width: $TabletMax) and (orientation:portrait) {
 /* For portrait layouts only */
   .container {
     margin: auto 20px;
   }
 }
 
-@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
+@media only screen and (min-width: $TabletMin) and (max-width: $TabletMax) and (orientation:landscape) {
 /* For landscape layouts only */
   .container {
     margin: auto 15px;
@@ -148,7 +148,7 @@ body {
 }
 
 /* styles for mobile browsers smaller than 480px; (iPhone) */
-@media only screen and (max-device-width: $mobile) {
+@media only screen and (max-width: $mobile) {
   .TopHeader {
     &--title {
       font-size: 26px;
@@ -161,7 +161,7 @@ body {
 }
 
 /* different techniques for iPad screening */
-@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
+@media only screen and (min-width: $TabletMin) and (max-width: $TabletMax) and (orientation:portrait) {
 /* For portrait layouts only */
   .TopHeader {
     &--title {
@@ -174,7 +174,7 @@ body {
   }
 }
 
-@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
+@media only screen and (min-width: $TabletMin) and (max-width: $TabletMax) and (orientation:landscape) {
 /* For landscape layouts only */
   .TopHeader {
     &--container {
@@ -251,7 +251,7 @@ li {
     display: none;
   }
   //blindspot
-  @media screen and (min-device-width: 1040px) and (max-device-width: 1439px) {
+  @media screen and (min-width: 1040px) and (max-width: 1439px) {
     .SideNav {
       &--container {
         display: inline !important;
@@ -269,21 +269,21 @@ li {
 }
 
 /* styles for mobile browsers smaller than 480px; (iPhone) */
-@media only screen and (max-device-width: $mobile) {
+@media only screen and (max-width: $mobile) {
   .SideNav--container {
     display: none;
   }
 }
 
 /* different techniques for iPad screening */
-@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
+@media only screen and (min-width: $TabletMin) and (max-width: $TabletMax) and (orientation:portrait) {
 /* For portrait layouts only */
   .SideNav--container {
     display: none;
   }
 }
 
-@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
+@media only screen and (min-width: $TabletMin) and (max-width: $TabletMax) and (orientation:landscape) {
 /* For landscape layouts only */
   .SideNav--container {
     display: none;
@@ -459,7 +459,7 @@ li {
   .hidden {
     display: none;
   }
-  @media screen and (min-device-width: 1040px) and (max-device-width: 1155px) {
+  @media screen and (min-width: 1040px) and (max-width: 1155px) {
     .SideSection {
       &--card-duration-container {
         top: 110px;
@@ -467,7 +467,7 @@ li {
       }
     }
   }
-  @media screen and (min-device-width: 1156px) and (max-device-width: 1439px) {
+  @media screen and (min-width: 1156px) and (max-width: 1439px) {
     .SideSection {
       &--card-duration-container {
         top: 125px;
@@ -476,7 +476,7 @@ li {
     }
   }
   //resize for blindspot
-  @media screen and (min-device-width: 1040px) and (max-device-width: 1439px) {
+  @media screen and (min-width: 1040px) and (max-width: 1439px) {
     .SideSection {
       &--filler {
         display: none;
@@ -497,7 +497,7 @@ li {
 }
 
 /* styles for mobile browsers smaller than 480px; (iPhone) */
-@media only screen and (max-device-width: $mobile) {
+@media only screen and (max-width: $mobile) {
   .SideSection {
     &--post-title {
       font-weight: $lightBold;
@@ -528,7 +528,7 @@ li {
     display: none;
   }
   /* styles for mobile browsers that's in our blind spot (430-480) */
-  @media only screen and (min-device-width: 430px) and (max-device-width: $mobile) {
+  @media only screen and (min-width: 430px) and (max-width: $mobile) {
     .SideSection {
       &--card-duration-container {
         display: inline-block;
@@ -550,7 +550,7 @@ li {
 
 
 /* different techniques for iPad screening */
-@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
+@media only screen and (min-width: $TabletMin) and (max-width: $TabletMax) and (orientation:portrait) {
 /* For portrait layouts only */
   .SideSection {
     &--post-title {
@@ -559,7 +559,7 @@ li {
     }
   }
   /* styles for tablet browsers that's in our blind spot */
-  @media only screen and (min-device-width: 885px) and (orientation:portrait) {
+  @media only screen and (min-width: 885px) and (orientation:portrait) {
     .SideSection {
       &--card-duration-container {
         top: 200px !important;
@@ -568,7 +568,7 @@ li {
     }
   }
   /* styles for tablet browsers that's in our blind spot */
-  @media only screen and (min-device-width: $defaultIpad) and (orientation:portrait) {
+  @media only screen and (min-width: $defaultIpad) and (orientation:portrait) {
     .SideSection {
       &--img {
         width: 100%;
@@ -584,7 +584,7 @@ li {
     }
   }
   /* styles for tablet browsers that's in our blind spot */
-  @media only screen and (min-device-width: 581px) and (max-device-width: 767px) and (orientation:portrait) {
+  @media only screen and (min-width: 581px) and (max-width: 767px) and (orientation:portrait) {
     .SideSection {
       &--img {
         width: 100%;
@@ -600,7 +600,7 @@ li {
     }
   }
   /* styles for tablet browsers that's in our blind spot */
-  @media only screen and (min-device-width: 522px) and (max-device-width: 580px) and (orientation:portrait) {
+  @media only screen and (min-width: 522px) and (max-width: 580px) and (orientation:portrait) {
     .SideSection {
       &--card-duration-container {
         top: 105px;
@@ -608,7 +608,7 @@ li {
       }
     }
   }
-  @media only screen and (min-device-width: $TabletMin) and (max-device-width: 521px) and (orientation:portrait) {
+  @media only screen and (min-width: $TabletMin) and (max-width: 521px) and (orientation:portrait) {
     .SideSection {
       &--card-duration-container {
         top: 85px;
@@ -618,7 +618,7 @@ li {
   }
 }
 
-@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
+@media only screen and (min-width: $TabletMin) and (max-width: $TabletMax) and (orientation:landscape) {
 /* For landscape layouts only */
   .SideSection {
     &--post-title {
@@ -639,7 +639,7 @@ li {
     }
   }
   /* styles for tablet browsers that's in our blind spot */
-  @media only screen and (min-device-width: 885px) and (orientation:landscape) {
+  @media only screen and (min-width: 885px) and (orientation:landscape) {
     .SideSection {
       &--card-duration-container {
         top: 200px !important;
@@ -648,7 +648,7 @@ li {
     }
   }
   /* styles for tablet browsers that's in our blind spot */
-  @media only screen and (min-device-width: $defaultIpad) and (orientation:landscape) {
+  @media only screen and (min-width: $defaultIpad) and (orientation:landscape) {
     .SideSection {
       &--img {
         width: 100%;
@@ -664,7 +664,7 @@ li {
     }
   }
   /* styles for tablet browsers that's in our blind spot */
-  @media only screen and (min-device-width: 581px) and (max-device-width: 767px) and (orientation:landscape) {
+  @media only screen and (min-width: 581px) and (max-width: 767px) and (orientation:landscape) {
     .SideSection {
       &--img {
         width: 100%;
@@ -680,7 +680,7 @@ li {
     }
   }
   /* styles for tablet browsers that's in our blind spot */
-  @media only screen and (min-device-width: 522px) and (max-device-width: 580px) and (orientation:landscape) {
+  @media only screen and (min-width: 522px) and (max-width: 580px) and (orientation:landscape) {
     .SideSection {
       &--card-duration-container {
         top: 105px;
@@ -734,7 +734,7 @@ li {
     }
   }
   //blindspot
-  @media screen and (min-device-width: 1040px) and (max-device-width: 1439px) {
+  @media screen and (min-width: 1040px) and (max-width: 1439px) {
     .MobileNav {
       &--container {
         display: none;
@@ -762,7 +762,7 @@ li {
 }
 
 /* styles for mobile browsers smaller than 480px; (iPhone) */
-@media only screen and (max-device-width: $mobile) {
+@media only screen and (max-width: $mobile) {
   .MobileNav {
     &--container {
       display: inline-block;
@@ -776,7 +776,7 @@ li {
 }
 
 /* different techniques for iPad screening */
-@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:portrait) {
+@media only screen and (min-width: $TabletMin) and (max-width: $TabletMax) and (orientation:portrait) {
 /* For portrait layouts only */
   .MobileNav {
     &--container {
@@ -788,7 +788,7 @@ li {
   }
 }
 
-@media only screen and (min-device-width: $TabletMin) and (max-device-width: $TabletMax) and (orientation:landscape) {
+@media only screen and (min-width: $TabletMin) and (max-width: $TabletMax) and (orientation:landscape) {
 /* For landscape layouts only */
   .MobileNav {
     &--container {
